@@ -1,6 +1,6 @@
 local packer = require('packer')
 
-return packer.startup(function()
+return packer.startup(function(use)
   
   -- Packer plugin manager
   use "wbthomason/packer.nvim"
@@ -11,37 +11,21 @@ return packer.startup(function()
   -- OneDark Theme
   use {
     'navarasu/onedark.nvim',
-    config = function()
-      require('onedark').load()
-    end
+    config = function() require('plugins.onedark') end
   }
 
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = function()
-      require'nvim-treesitter.configs'.setup {
-        ensure_installed = "maintained",
-        sync_install = false,
-
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-      }
-      end
+    config = function() require('plugins.treesitter') end
   }
   
   -- Gitsigns
   use {
     'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
-    config = function()
-      require('gitsigns').setup()
-    end
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function() require('gitsigns').setup() end
   }
 
   -- Base16
@@ -54,30 +38,28 @@ return packer.startup(function()
   use {
     "kyazdani42/nvim-web-devicons",
     after = "nvim-base16.lua",
+    config = function() require('plugins.icons') end
   }
 
   -- Tree
   use {
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function() require('nvim-tree').setup() end
+    config = function() require('plugins.tree') end
   }
 
   -- Hop
   use {
     'phaazon/hop.nvim',
     branch = 'v1', 
-    config = function()
-      require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
+    config = function() require('plugins.hop') end
   }
 
   -- Colorizer
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
-      require('colorizer').setup()
-    end
+      require('colorizer').setup() end
   }
 end)
 
