@@ -6,6 +6,18 @@ return packer.startup(function()
 		event = "VimEnter",
    	}
 
+	use 'nvim-lua/plenary.nvim'
+
+	use {
+		'lewis6991/gitsigns.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim'
+		},
+		config = function()
+			require('gitsigns').setup()
+		end
+	}
+
 	use {
 		"NvChad/nvim-base16.lua",
 		after = "packer.nvim",
