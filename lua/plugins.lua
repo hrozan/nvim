@@ -1,51 +1,84 @@
 local packer = require('packer')
 
 return packer.startup(function()
-	use {
-		"wbthomason/packer.nvim",
-		event = "VimEnter",
-   	}
+  
+  -- Packer plugin manager
+  use "wbthomason/packer.nvim"
 
-        use 'joshdick/onedark.vim'
+  -- Plenary
+  use 'nvim-lua/plenary.nvim'
 
-	use 'nvim-lua/plenary.nvim'
+  -- OneDark Theme
+  use {
+    'navarasu/onedark.nvim',
+    config = function()
+      require('onedark').load()
+    end
+  }
 
-	use {
-		'lewis6991/gitsigns.nvim',
-		requires = {
-			'nvim-lua/plenary.nvim'
-		},
-		config = function()
-			require('gitsigns').setup()
-		end
-	}
+  -- Treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require'nvim-treesitter.configs'.setup {
+        ensure_installed = "maintained",
+        sync_install = false,
 
-	use {
-		"NvChad/nvim-base16.lua",
-		after = "packer.nvim",
-	}
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+      }
+      end
+  }
+  
+  -- Gitsigns
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
-	use {
-		"kyazdani42/nvim-web-devicons",
-		after = "nvim-base16.lua",
-	}
+  -- Base16
+  use {
+    "NvChad/nvim-base16.lua",
+    after = "packer.nvim",
+  }
 
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = {
-			'kyazdani42/nvim-web-devicons', -- optional, for file icon
-		},
-    		config = function() require'nvim-tree'.setup {} end
-	}
+  -- Web Devicons
+  use {
+    "kyazdani42/nvim-web-devicons",
+    after = "nvim-base16.lua",
+  }
 
-	use {
-		'phaazon/hop.nvim',
-		branch = 'v1', -- optional but strongly recommended
-		config = function()
-			-- you can configure Hop the way you like here; see :h hop-config
-			require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-  		end
-	}
+  -- Tree
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function() require('nvim-tree').setup() end
+  }
+
+  -- Hop
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v1', 
+    config = function()
+      require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
+
+  -- Colorizer
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end
+  }
 end)
 
 

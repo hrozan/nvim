@@ -1,11 +1,6 @@
 local opt = vim.opt
 local g = vim.g
 
-vim.cmd [[
-  syntax enable
-  colorscheme onedark
-]]
-
 g.mapleader = " "
 
 opt.title = true
