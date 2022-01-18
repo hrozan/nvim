@@ -1,8 +1,7 @@
 local devicons = require('nvim-web-devicons')
 
 devicons.setup {
-  default = true,
-   override = {
+  override = {
     c = {
        icon = "",
        name = "c",
@@ -41,6 +40,7 @@ devicons.setup {
     },
     lua = {
        icon = "",
+       color = "blue",
        name = "lua",
     },
     mp3 = {
