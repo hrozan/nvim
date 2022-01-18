@@ -1,6 +1,4 @@
-vim.cmd "set rnu"
-vim.cmd "packadd packer.nvim"
-
+require 'options'
 require 'plugins'
 require 'mappings'
 

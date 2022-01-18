@@ -6,6 +6,8 @@ return packer.startup(function()
 		event = "VimEnter",
    	}
 
+        use 'joshdick/onedark.vim'
+
 	use 'nvim-lua/plenary.nvim'
 
 	use {
