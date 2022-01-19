@@ -17,7 +17,6 @@ return packer.startup(function(use)
   -- Web Devicons
   use {
     'kyazdani42/nvim-web-devicons',
-    after = "nvim-base16.lua",
     config = function() require('plugins.icons') end
   }
 
@@ -40,12 +39,6 @@ return packer.startup(function(use)
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end
-  }
-
-  -- Base16
-  use {
-    "NvChad/nvim-base16.lua",
-    after = "packer.nvim",
   }
 
   -- Hop

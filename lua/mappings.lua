@@ -3,7 +3,7 @@ function map(mode, shortcut, command)
 end
 
 -- Packer
-map('', '<A-p>', ':PackerSync<cr>')
+map('', '<A-p>', ':PackerCompile<cr>')
 
 -- Tree
 map('','<A-1>', ':NvimTreeFocus<cr>')
