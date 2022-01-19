@@ -61,9 +61,24 @@ return packer.startup(function(use)
     config = function() require('colorizer').setup() end
   }
 
+  -- LSP Config
   use {
     'neovim/nvim-lspconfig',
     config = function() require('plugins.config.lsp') end
+  }
+
+
+  -- Blankline
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    event = 'BufRead',
+    config = function() require('plugins.config.blankline') end,
+  }
+
+  -- Autopairs
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require('plugins.config.autopairs') end,
   }
 
 end)

@@ -2,6 +2,13 @@ function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
 
+
+map('n', '<F5>', ":lua require('utils').reload()<cr>")
+
+map('', '<C-q>', ':q<cr>')
+map('', '<C-Q>', ':q!<cr>')
+map('', '<C-s>', ':w<cr>')
+
 -- Packer
 map('', '<A-p>', ':PackerCompile<cr>')
 
