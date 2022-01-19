@@ -24,7 +24,7 @@ return packer.startup(function(use)
   -- Tree
   use {
     'kyazdani42/nvim-tree.lua',
-    after = 'kyazdani42/nvim-web-devicons',
+    require = 'kyazdani42/nvim-web-devicons',
     config = function() require('plugins.tree') end
   }
 
