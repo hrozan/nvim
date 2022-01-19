@@ -11,33 +11,34 @@ return packer.startup(function(use)
   -- OneDark Theme
   use {
     'navarasu/onedark.nvim',
-    config = function() require('plugins.onedark') end
+    config = function() require('plugins.config.onedark') end
   } 
 
   -- Web Devicons
   use {
     'kyazdani42/nvim-web-devicons',
-    config = function() require('plugins.icons') end
+    config = function() require('plugins.config.icons') end
   }
 
   -- Tree
   use {
     'kyazdani42/nvim-tree.lua',
     require = 'kyazdani42/nvim-web-devicons',
-    config = function() require('plugins.tree') end
+    config = function() require('plugins.config.tree') end
   }
 
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = function() require('plugins.treesitter') end
+    config = function() require('plugins.config.treesitter') end
   }
 
+  -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = function() require('plugins.lualine') end  
+    config = function() require('plugins.config.lualine') end  
   }
   
   -- Gitsigns
@@ -51,15 +52,20 @@ return packer.startup(function(use)
   use {
     'phaazon/hop.nvim',
     branch = 'v1', 
-    config = function() require('plugins.hop') end
+    config = function() require('plugins.config.hop') end
   }
 
   -- Colorizer
   use {
     'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup() end
+    config = function() require('colorizer').setup() end
   }
+
+  use {
+    'neovim/nvim-lspconfig',
+    config = function() require('plugins.config.lsp') end
+  }
+
 end)
 
 
