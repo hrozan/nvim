@@ -1,4 +1,7 @@
 local onedark = require('onedark')
 
-onedark.setup()
+onedark.setup {
+    transparent = true
+}
+
 onedark.load()
