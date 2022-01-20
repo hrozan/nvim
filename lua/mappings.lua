@@ -2,19 +2,23 @@ function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
 
+map("v", "p", '"_dP')
+map("n", "<Esc>", ":noh <CR>")
+map("n", "Y", "yg$")
 
-map('n', '<F5>', ":lua require('utils').reload()<cr>")
-
+-- Quit
 map('', '<C-q>', ':q<cr>')
 map('', '<C-Q>', ':q!<cr>')
 map('', '<C-s>', ':w<cr>')
 
-
--- Packer
-map('', '<A-p>', ':PackerCompile<cr>')
+-- Bufferline
+map('', '<A-q>', ':bd<cr>')
+map('n', 'gt', ':BufferLineCycleNext<cr>')
+map('n', 'gT', ':BufferLineCyclePrev<cr>')
 
 -- Tree
 map('','<A-1>', ':NvimTreeFocus<cr>')
+map('','<C-n>', ':NvimTreeToggle<cr>')
 
 -- Hop
 map('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
