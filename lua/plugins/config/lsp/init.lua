@@ -1,22 +1,7 @@
 local lsp = require('lspconfig')
+local capabilities = require('plugins.config.lsp.capabilities')
 local on_attach = require('plugins.config.lsp.on_attach')
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.preselectSupport = true
-capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-   properties = {
-      "documentation",
-      "detail",
-      "additionalTextEdits",
-   },
-}
 -- Go 
 lsp.gopls.setup{
   on_attach = on_attach,
@@ -37,17 +22,17 @@ lsp.gopls.setup{
 
 --- Typescript
 lsp.tsserver.setup{
+  capabilities = capabilities,
   on_attach = on_attach
 }
 
 -- Yaml
 lsp.yamlls.setup{
+  capabilities = capabilities,
   on_attach = on_attach
 }
 
 -- JSON
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 lsp.jsonls.setup{
   capabilities = capabilities,
   on_attach = on_attach
@@ -55,11 +40,14 @@ lsp.jsonls.setup{
 
 -- Docker
 lsp.dockerls.setup{
+  capabilities = capabilities,
   on_attach = on_attach
 }
 
 -- Emmet
 lsp.emmet_ls.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
   filetypes = { "html", "css", "vue" }
 }
 
