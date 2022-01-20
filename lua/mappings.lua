@@ -9,6 +9,7 @@ map('', '<C-q>', ':q<cr>')
 map('', '<C-Q>', ':q!<cr>')
 map('', '<C-s>', ':w<cr>')
 
+
 -- Packer
 map('', '<A-p>', ':PackerCompile<cr>')
 

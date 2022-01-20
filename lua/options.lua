@@ -10,7 +10,7 @@ opt.cul = true
 
 -- Indentline
 opt.expandtab = true
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 opt.smartindent = true
 
 opt.fillchars = { eob = " " }
