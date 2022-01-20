@@ -1,8 +1,6 @@
 local opt = vim.opt
 local g = vim.g
 
-g.mapleader = " "
-
 opt.title = true
 opt.clipboard = 'unnamedplus'
 opt.cmdheight = 1

@@ -11,6 +11,12 @@ map('', '<C-q>', ':q<cr>')
 map('', '<C-Q>', ':q!<cr>')
 map('', '<C-s>', ':w<cr>')
 
+-- Telescope
+map("", "<leader>ff", ":Telescope find_files<cr>")
+map("n", "<leader>fg", ":Telescope live_grep<cr>")
+map("n", "<leader>fb", ":Telescope buffers<cr>")
+map("n", "<leader>fh", ":Telescope help_tags<cr>")
+
 -- Bufferline
 map('', '<A-q>', ':bd<cr>')
 map('n', 'gt', ':BufferLineCycleNext<cr>')
