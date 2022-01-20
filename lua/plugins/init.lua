@@ -138,6 +138,14 @@ return packer.startup(function(use)
         config = function() require('plugins.config.telescope') end
     }
 
+    -- Trouble
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function() require("plugins.config.trouble") end
+    }
+
+
 end)
 
 

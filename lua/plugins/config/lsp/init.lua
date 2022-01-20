@@ -3,7 +3,7 @@ local capabilities = require('plugins.config.lsp.capabilities')
 local on_attach = require('plugins.config.lsp.on_attach')
 
 -- Go 
-lsp.gopls.setup{
+lsp.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = {"gopls", "serve"},
@@ -21,31 +21,31 @@ lsp.gopls.setup{
 }
 
 --- Typescript
-lsp.tsserver.setup{
+lsp.tsserver.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
 
 -- Yaml
-lsp.yamlls.setup{
+lsp.yamlls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
 
 -- JSON
-lsp.jsonls.setup{
+lsp.jsonls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
 
 -- Docker
-lsp.dockerls.setup{
+lsp.dockerls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
 
 -- Emmet
-lsp.emmet_ls.setup{
+lsp.emmet_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "html", "css", "vue" }
