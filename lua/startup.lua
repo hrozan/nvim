@@ -1,6 +1,5 @@
-local packer = require('packer')
-
-return packer.startup(function(use)
+local startup = require('packer').startup
+startup(function(use)
       
     -- Packer plugin manager
     use "wbthomason/packer.nvim"
@@ -61,30 +60,27 @@ return packer.startup(function(use)
         config = function() require('colorizer').setup() end
     }
 
-    -- LSP Config
+    -- Language Server Protocolocal 
+    
+    -- Config
     use {
         'neovim/nvim-lspconfig',
         config = function() require('plugins.lsp') end
     }
 
-    -- LSP Signature
+    use {
+        'glepnir/lspsaga.nvim',
+        after = 'neovim/nvim-lspconfig', 
+        config = function() require('plugins.lspsaga') end
+    }
+
+    --  Signature
     use {
         'ray-x/lsp_signature.nvim',
         config = function() require('lsp_signature').setup() end
     }
 
-    -- Blankline
-    use {
-        'lukas-reineke/indent-blankline.nvim',
-        event = 'BufRead',
-        config = function() require('plugins.blankline') end,
-    }
-
-    -- Autopairs
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require('plugins.autopairs') end,
-    }
+    
 
     -- Auto Completion
 
@@ -138,11 +134,26 @@ return packer.startup(function(use)
         config = function() require('plugins.telescope') end
     }
 
+    -- UI
+    
     -- Trouble
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
         config = function() require("plugins.trouble") end
+    }
+
+    -- Blankline
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        event = 'BufRead',
+        config = function() require('plugins.blankline') end,
+    }
+
+    -- Autopairs
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require('plugins.autopairs') end,
     }
 
 
