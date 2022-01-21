@@ -1,4 +1,5 @@
-require 'plugins'
-require 'mappings'
 require 'options'
+require 'startup'
+require 'mappings'
+
 

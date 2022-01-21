@@ -11,34 +11,34 @@ return packer.startup(function(use)
     -- OneDark Theme
     use {
         'navarasu/onedark.nvim',
-        config = function() require('plugins.config.onedark') end
+        config = function() require('plugins.onedark') end
     } 
 
     -- Web Devicons
     use {
         'kyazdani42/nvim-web-devicons',
-        config = function() require('plugins.config.icons') end
+        config = function() require('plugins.icons') end
     }
 
     -- Tree
     use {
         'kyazdani42/nvim-tree.lua',
         require = 'kyazdani42/nvim-web-devicons',
-        config = function() require('plugins.config.tree') end
+        config = function() require('plugins.tree') end
     }
 
     -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
-        config = function() require('plugins.config.treesitter') end
+        config = function() require('plugins.treesitter') end
     }
 
     -- Lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function() require('plugins.config.lualine') end  
+        config = function() require('plugins.lualine') end  
     }
       
     -- Gitsigns
@@ -52,7 +52,7 @@ return packer.startup(function(use)
     use {
         'phaazon/hop.nvim',
         branch = 'v1', 
-        config = function() require('plugins.config.hop') end
+        config = function() require('plugins.hop') end
     }
 
     -- Colorizer
@@ -64,7 +64,7 @@ return packer.startup(function(use)
     -- LSP Config
     use {
         'neovim/nvim-lspconfig',
-        config = function() require('plugins.config.lsp') end
+        config = function() require('plugins.lsp') end
     }
 
     -- LSP Signature
@@ -77,13 +77,13 @@ return packer.startup(function(use)
     use {
         'lukas-reineke/indent-blankline.nvim',
         event = 'BufRead',
-        config = function() require('plugins.config.blankline') end,
+        config = function() require('plugins.blankline') end,
     }
 
     -- Autopairs
     use {
         "windwp/nvim-autopairs",
-        config = function() require('plugins.config.autopairs') end,
+        config = function() require('plugins.autopairs') end,
     }
 
     -- Auto Completion
@@ -98,7 +98,7 @@ return packer.startup(function(use)
     use {
         "hrsh7th/nvim-cmp",
         after = "friendly-snippets",
-        config = function() require('plugins.config.cmp') end,
+        config = function() require('plugins.cmp') end,
     }
 
     -- LuaSnip
@@ -106,7 +106,7 @@ return packer.startup(function(use)
         "L3MON4D3/LuaSnip",
         wants = "friendly-snippets",
         after = "nvim-cmp",
-        config = function() require('plugins.config.cmp.luasnip') end,
+        config = function() require('plugins.luasnip') end,
     }
 
     use { "saadparwaiz1/cmp_luasnip", after = "LuaSnip" }
@@ -128,21 +128,21 @@ return packer.startup(function(use)
     use {
         'akinsho/bufferline.nvim', 
         requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require("plugins.config.bufferline") end
+        config = function() require("plugins.bufferline") end
     }
 
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} },
-        config = function() require('plugins.config.telescope') end
+        config = function() require('plugins.telescope') end
     }
 
     -- Trouble
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
-        config = function() require("plugins.config.trouble") end
+        config = function() require("plugins.trouble") end
     }
 
 
