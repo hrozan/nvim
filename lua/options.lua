@@ -5,6 +5,7 @@ opt.title = true
 opt.clipboard = 'unnamedplus'
 opt.cmdheight = 1
 opt.cul = true 
+opt.swapfile = false
 
 -- Indentline
 opt.expandtab = true
