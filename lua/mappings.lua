@@ -2,14 +2,23 @@ function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
 
+-- Base
 map("v", "p", '"_dP')
 map("n", "<Esc>", ":noh <CR>")
 map("n", "Y", "yg$")
-
--- Quit
 map('', '<C-q>', ':q<cr>')
-map('', '<C-Q>', ':q!<cr>')
+map('', '<C-q-q>', ':q!<cr>')
 map('', '<C-s>', ':w<cr>')
+
+
+-- Troble
+map("n", "<leader>xx", "<cmd>Trouble<cr>")
+map("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>")
+map("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>")
+map("n", "<leader>xl", "<cmd>Trouble loclist<cr>")
+map("n", "<leader>xq", "<cmd>Trouble quickfix<cr>")
+map("n", "gR", "<cmd>Trouble lsp_references<cr>")
+
 
 -- Telescope
 map("", "<leader>ff", ":Telescope find_files<cr>")
