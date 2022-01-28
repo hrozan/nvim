@@ -9,10 +9,14 @@ map("n", "Y", "yg$")
 map('', '<C-q>', ':q<cr>')
 map('', '<C-q-q>', ':q!<cr>')
 map('', '<C-s>', ':w<cr>')
+map("", "<C-h>", "<C-w>h")
+map("", "<C-j>", "<C-w>j")
+map("", "<C-k>", "<C-w>k")
+map("", "<C-l>", "<C-w>l")
 
 
 -- Troble
-map("n", "<leader>xx", "<cmd>Trouble<cr>")
+map("", "<A-6>", "<cmd>Trouble<cr>")
 map("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>")
 map("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>")
 map("n", "<leader>xl", "<cmd>Trouble loclist<cr>")

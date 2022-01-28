@@ -1,5 +1,5 @@
-require 'options'
-require 'startup'
-require 'mappings'
+require 'hrozan.options'
+require 'hrozan.packer'
+require 'hrozan.mappings'
 
 
