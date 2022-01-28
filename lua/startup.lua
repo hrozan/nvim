@@ -65,13 +65,7 @@ startup(function(use)
     -- Config
     use {
         'neovim/nvim-lspconfig',
-        config = function() require('plugins.lsp') end
-    }
-
-    use {
-        'glepnir/lspsaga.nvim',
-        after = 'neovim/nvim-lspconfig', 
-        config = function() require('plugins.lspsaga') end
+        config = function() require('plugins.lspconfig') end
     }
 
     --  Signature
