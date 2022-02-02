@@ -137,13 +137,11 @@ startup(function(use)
         config = function() require("hrozan.trouble") end
     }
 
-
     -- Autopairs
     use {
         "windwp/nvim-autopairs",
         config = function() require('hrozan.autopairs') end,
     }
-
 
 end)
 

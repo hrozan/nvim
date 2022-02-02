@@ -16,7 +16,7 @@ bufferline.setup {
         show_buffer_close_icons = true,
         show_close_icon = false,
         separator_style = "thick",
-        always_show_bufferline = true,
+        always_show_bufferline = false,
         diagnostics = false,
 
         custom_filter = function(buf_number)
