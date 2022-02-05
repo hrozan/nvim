@@ -60,7 +60,16 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
    },
 }
 
-local servers = { 'tsserver', 'yamlls', 'jsonls', 'dockerls', 'rust_analyzer'}
+local servers = { 
+    'tsserver', 
+    'yamlls', 
+    'jsonls', 
+    'bashls', 
+    'dockerls', 
+    'rust_analyzer',
+    'clangd',
+}
+
 for _, s in pairs(servers) do
   lsp[s].setup {
     capabilities = capabilities,
@@ -71,11 +80,3 @@ for _, s in pairs(servers) do
     }
   }
 end
-
--- Emmet
-lsp.emmet_ls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = { "html", "css", "vue" }
-}
-
