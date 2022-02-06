@@ -1,5 +1,5 @@
-require 'hrozan.options'
+require 'options'
 require 'hrozan.packer'
-require 'hrozan.mappings'
+require 'mappings'
 
 

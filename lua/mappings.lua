@@ -14,6 +14,11 @@ map("", "<C-j>", "<C-w>j")
 map("", "<C-k>", "<C-w>k")
 map("", "<C-l>", "<C-w>l")
 
+-- Easier navigation between windows
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-l>", "<C-w>l")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-j>", "<C-w>j")
 
 -- Troble
 map("", "<A-6>", "<cmd>Trouble<cr>")

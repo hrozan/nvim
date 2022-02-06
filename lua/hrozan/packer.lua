@@ -7,10 +7,10 @@ startup(function(use)
     -- Plenary
     use 'nvim-lua/plenary.nvim'
 
-    -- OneDark Theme
+    -- Github Theme
     use {
-        'navarasu/onedark.nvim',
-        config = function() require('hrozan.onedark') end
+        'projekt0n/github-nvim-theme',
+        config = function() require('hrozan.github_theme') end
     } 
 
     -- Web Devicons
@@ -130,6 +130,9 @@ startup(function(use)
 
     -- UI
     
+    -- Dressing
+    use {'stevearc/dressing.nvim'}
+
     -- Trouble
     use {
         "folke/trouble.nvim",
@@ -142,6 +145,8 @@ startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require('hrozan.autopairs') end,
     }
+
+    use 'folke/lsp-colors.nvim'
 
 end)
 
