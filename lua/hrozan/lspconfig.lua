@@ -39,7 +39,7 @@ local on_attach = function(client, bufnr)
     map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     map('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-    map('n', '<C-l>', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts) 
+    map('n', '<A-f>', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts) 
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

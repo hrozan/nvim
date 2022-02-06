@@ -128,8 +128,6 @@ startup(function(use)
         config = function() require('hrozan.telescope') end
     }
 
-    -- UI
-    
     -- Dressing
     use {'stevearc/dressing.nvim'}
 
