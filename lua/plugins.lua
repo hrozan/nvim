@@ -7,6 +7,12 @@ startup(function(use)
     -- Plenary
     use 'nvim-lua/plenary.nvim'
 
+    -- Git
+    use 'tpope/vim-fugitive'
+
+    -- Sneaker
+    use 'justinmk/vim-sneak'
+
     -- Github Theme
     use {
         'projekt0n/github-nvim-theme',

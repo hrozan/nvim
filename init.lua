@@ -1,5 +1,5 @@
 require 'options'
-require 'packer_start'
+require 'plugins'
 require 'mappings'
 
 
