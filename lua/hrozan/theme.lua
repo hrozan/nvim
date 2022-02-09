@@ -4,7 +4,7 @@ vim.g.material_style = 'deep ocean'
 
 theme.setup{
     disable = {
-        background = false, 
+        background = true, 
     },
 }
 

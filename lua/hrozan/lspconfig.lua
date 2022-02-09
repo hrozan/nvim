@@ -69,7 +69,6 @@ local servers = {
     'rust_analyzer',
     'clangd',
     'volar',
-    'gopls',
 }
 
 for _, s in pairs(servers) do

@@ -10,6 +10,9 @@ startup(function(use)
     -- Git
     use 'tpope/vim-fugitive'
 
+    -- Editor Config
+    use 'editorconfig/editorconfig-vim'
+
     -- Sneaker
     use 'justinmk/vim-sneak'
 
@@ -65,10 +68,8 @@ startup(function(use)
         'norcalli/nvim-colorizer.lua',
         config = function() require('colorizer').setup() end
     }
-
-    -- Language Server Protocolocal 
     
-    -- Config
+    -- Lsp-config
     use {
         'neovim/nvim-lspconfig',
         config = function() require('hrozan.lspconfig') end
@@ -81,9 +82,6 @@ startup(function(use)
         config = function() require('lsp_signature').setup() end
     }
     
-
-    -- Auto Completion
-
     -- Friendly snippets
     use {
         "rafamadriz/friendly-snippets",
