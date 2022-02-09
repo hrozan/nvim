@@ -13,10 +13,10 @@ startup(function(use)
     -- Sneaker
     use 'justinmk/vim-sneak'
 
-    -- Github Theme
+    -- Theme
     use {
-        'projekt0n/github-nvim-theme',
-        config = function() require('hrozan.github_theme') end
+        'marko-cerovac/material.nvim',
+        config = function() require('hrozan.theme') end
     } 
 
     -- Web Devicons

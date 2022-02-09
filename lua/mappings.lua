@@ -15,7 +15,7 @@ map('n', 'U', ':redo<cr>')
 map("n", "<C-a>", ":%y+ <CR>") -- copy whole file content
 
 -- GitSingh
-map("n", "<leader>gr", ":Gitsigns reset_hunk<cr>")
+map("n", "gr", ":Gitsigns reset_hunk<cr>")
 
 -- Easier navigation between windows
 map("n", "<C-h>", "<C-w>h")
@@ -23,11 +23,12 @@ map("n", "<C-l>", "<C-w>l")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-j>", "<C-w>j")
 
--- Tree
-map("", "<A-1>", ":NvimTreeToggle<cr>")
 
 -- Telescope
-map("", "<A-2>", ":Telescope find_files<cr>")
+map("", "<A-1>", ":Telescope find_files<cr>")
+
+-- Tree
+map("", "<A-2>", ":NvimTreeToggle<cr>")
 
 -- Troble
 map("", "<A-3>", "<cmd>Trouble<cr>")
