@@ -2,6 +2,11 @@
 
 ## Languages Server 
 
+Install `lua-language-server`
+```
+pamac install lua-language-server
+```
+
 Install `tsserver`
 ```
 npm install -g typescript typescript-language-server

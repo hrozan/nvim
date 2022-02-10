@@ -1,98 +1,96 @@
-local startup = require('packer').startup
+local startup = require("packer").startup
+
 startup(function(use)
-      
+
     -- Packer plugin manager
     use "wbthomason/packer.nvim"
 
     -- Plenary
-    use 'nvim-lua/plenary.nvim'
+    use "nvim-lua/plenary.nvim"
 
     -- Git
-    use 'tpope/vim-fugitive'
+    use "tpope/vim-fugitive"
 
     -- Editor Config
-    use 'editorconfig/editorconfig-vim'
+    use "editorconfig/editorconfig-vim"
 
     -- Sneaker
-    use 'justinmk/vim-sneak'
+    use "justinmk/vim-sneak"
 
     -- Theme
     use {
-        'projekt0n/github-nvim-theme',
-        config = function() require('hrozan.theme') end
-    } 
+        "projekt0n/github-nvim-theme",
+        config = function() require("hrozan.theme") end,
+    }
 
     -- Web Devicons
     use {
-        'kyazdani42/nvim-web-devicons',
-        config = function() require('hrozan.icons') end
+        "kyazdani42/nvim-web-devicons",
+        config = function() require("hrozan.icons") end,
     }
 
     -- Tree
     use {
-        'kyazdani42/nvim-tree.lua',
-        require = 'kyazdani42/nvim-web-devicons',
-        config = function() require('hrozan.tree') end
+        "kyazdani42/nvim-tree.lua",
+        require = "kyazdani42/nvim-web-devicons",
+        config = function() require("hrozan.tree") end,
     }
 
     -- Treesitter
     use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = function() require('hrozan.treesitter') end
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+        config = function() require("hrozan.treesitter") end,
     }
 
     -- Lualine
     use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function() require('hrozan.lualine') end  
+        "nvim-lualine/lualine.nvim",
+        requires = {"kyazdani42/nvim-web-devicons", opt = true},
+        config = function() require("hrozan.lualine") end,
     }
-      
+
     -- Gitsigns
     use {
-        'lewis6991/gitsigns.nvim',
-        requires = { 'nvim-lua/plenary.nvim' },
-        config = function() require('gitsigns').setup() end
+        "lewis6991/gitsigns.nvim",
+        requires = {"nvim-lua/plenary.nvim"},
+        config = function() require("gitsigns").setup() end,
     }
 
     -- Hop
     use {
-        'phaazon/hop.nvim',
-        branch = 'v1', 
-        config = function() require('hrozan.hop') end
+        "phaazon/hop.nvim",
+        branch = "v1",
+        config = function() require("hrozan.hop") end,
     }
 
     -- Colorizer
     use {
-        'norcalli/nvim-colorizer.lua',
-        config = function() require('colorizer').setup() end
+        "norcalli/nvim-colorizer.lua",
+        config = function() require("colorizer").setup() end,
     }
-    
+
     -- Lsp-config
     use {
-        'neovim/nvim-lspconfig',
-        config = function() require('hrozan.lspconfig') end
+        "neovim/nvim-lspconfig",
+        config = function() require("hrozan.lspconfig") end,
     }
 
     --  Signature
     use {
-        'ray-x/lsp_signature.nvim',
-        requires = { 'neovim/nvim-lspconfig' },
-        config = function() require('lsp_signature').setup() end
+        "ray-x/lsp_signature.nvim",
+        requires = {"neovim/nvim-lspconfig"},
+        config = function() require("lsp_signature").setup() end,
     }
-    
+
     -- Friendly snippets
-    use {
-        "rafamadriz/friendly-snippets",
-        event = "InsertEnter",
-    }
+    use {"rafamadriz/friendly-snippets", event = "InsertEnter"}
 
     -- CMP
     use {
         "hrsh7th/nvim-cmp",
         after = "friendly-snippets",
-        config = function() require('hrozan.cmp') end,
+        config = function() require("hrozan.cmp") end,
     }
 
     -- LuaSnip
@@ -100,63 +98,64 @@ startup(function(use)
         "L3MON4D3/LuaSnip",
         wants = "friendly-snippets",
         after = "nvim-cmp",
-        config = function() require('hrozan.luasnip') end,
+        config = function() require("hrozan.luasnip") end,
     }
 
-    use { "saadparwaiz1/cmp_luasnip", after = "LuaSnip" }
-    use { "hrsh7th/cmp-nvim-lua", after = "cmp_luasnip" }
-    use { "hrsh7th/cmp-nvim-lsp", after = "cmp-nvim-lua" }
-    use { "hrsh7th/cmp-buffer", after = "cmp-nvim-lsp" }
-    use { "hrsh7th/cmp-path", after = "cmp-buffer" }
-
+    use {"saadparwaiz1/cmp_luasnip", after = "LuaSnip"}
+    use {"hrsh7th/cmp-nvim-lua", after = "cmp_luasnip"}
+    use {"hrsh7th/cmp-nvim-lsp", after = "cmp-nvim-lua"}
+    use {"hrsh7th/cmp-buffer", after = "cmp-nvim-lsp"}
+    use {"hrsh7th/cmp-path", after = "cmp-buffer"}
 
     -- Comment
     use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        "numToStr/Comment.nvim",
+        config = function() require("Comment").setup() end,
     }
 
     -- Bufferline
     use {
-        'akinsho/bufferline.nvim', 
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require("hrozan.bufferline") end
+        "akinsho/bufferline.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function() require("hrozan.bufferline") end,
     }
 
     -- Telescope
     use {
-        'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} },
-        config = function() require('hrozan.telescope') end
+        "nvim-telescope/telescope.nvim",
+        requires = {{"nvim-lua/plenary.nvim"}},
+        config = function() require("hrozan.telescope") end,
     }
 
     -- Dressing
-    use {'stevearc/dressing.nvim'}
+    use {"stevearc/dressing.nvim"}
 
     -- Trouble
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
-        config = function() require("hrozan.trouble") end
+        config = function() require("hrozan.trouble") end,
     }
 
     -- Autopairs
     use {
         "windwp/nvim-autopairs",
-        config = function() require('hrozan.autopairs') end,
+        config = function() require("hrozan.autopairs") end,
     }
 
-    use 'folke/lsp-colors.nvim'
+    use "folke/lsp-colors.nvim"
 
     -- Terminal Toogle
-    use { 
+    use {
         "akinsho/toggleterm.nvim",
-        config = function() require('hrozan.toggleterm') end,
+        config = function() require("hrozan.toggleterm") end,
 
+    }
+
+    -- Formatter
+    use {
+        "mhartington/formatter.nvim",
+        config = function() require("hrozan.formatter") end,
     }
 
 end)
-
-

@@ -1,8 +1,9 @@
-local bufferline = require("bufferline")
+local ok, bufferline = pcall(require, "bufferline")
+if not ok then return end
 
 bufferline.setup {
     options = {
-        offsets = { { filetype = "NvimTree", text = "File Explore", padding = 1 } },
+        offsets = {{filetype = "NvimTree", text = "File Explore", padding = 1}},
         buffer_close_icon = "",
         modified_icon = "",
         left_trunc_marker = "",
@@ -28,12 +29,12 @@ bufferline.setup {
                 if type == "vert" then
                     return false
                 elseif type == "hori" then
-                   return false
+                    return false
                 end
                 return true
             end
 
-        return true
-      end,
-   }
+            return true
+        end,
+    },
 }
