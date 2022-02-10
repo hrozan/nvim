@@ -54,7 +54,7 @@ startup(function(use)
     use {
         "lewis6991/gitsigns.nvim",
         requires = {"nvim-lua/plenary.nvim"},
-        config = function() require("gitsigns").setup() end,
+        config = function() require("hrozan.gitsigns") end,
     }
 
     -- Hop
@@ -67,7 +67,7 @@ startup(function(use)
     -- Colorizer
     use {
         "norcalli/nvim-colorizer.lua",
-        config = function() require("colorizer").setup() end,
+        config = function() require("hrozan.colorizer") end,
     }
 
     -- Lsp-config
@@ -80,7 +80,7 @@ startup(function(use)
     use {
         "ray-x/lsp_signature.nvim",
         requires = {"neovim/nvim-lspconfig"},
-        config = function() require("lsp_signature").setup() end,
+        config = function() require("hrozan.lspsignature") end,
     }
 
     -- Friendly snippets
@@ -110,7 +110,7 @@ startup(function(use)
     -- Comment
     use {
         "numToStr/Comment.nvim",
-        config = function() require("Comment").setup() end,
+        config = function() require("hrozan.comment") end,
     }
 
     -- Bufferline
@@ -158,4 +158,10 @@ startup(function(use)
         config = function() require("hrozan.formatter") end,
     }
 
+    -- Todo Highligh
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function() require("hrozan.todo") end,
+    }
 end)

@@ -17,7 +17,7 @@ map("t", "<Esc>", "<C-\\><C-n>")
 
 map("n", "<C-a>", ":%y+ <CR>") -- copy whole file content
 
-map("", "C-A-s", ":PackerSync<CR>")
+map("", "<leader-p>", ":PackerSync<CR>")
 
 -- GitSingh
 map("n", "gr", ":Gitsigns reset_hunk<cr>")

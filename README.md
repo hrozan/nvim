@@ -51,3 +51,7 @@ Install `clangd`
 ```
 pamac install clang
 ```
+
+<!-- ## Formaters -->
+<!-- todo add fomaters instalation -->
+
