@@ -1,10 +1,9 @@
-local present, luasnip = pcall(require, "luasnip")
+local ok, luasnip = pcall(require, "luasnip")
+if not ok then return end
 
-if present then
-  luasnip.config.set_config {
-     history = true,
-     updateevents = "TextChanged,TextChangedI",
-  }
+luasnip.config.set_config {
+    history = true,
+    updateevents = "TextChanged,TextChangedI",
+}
 
-  require("luasnip/loaders/from_vscode").load()
-end
+require("luasnip/loaders/from_vscode").load()

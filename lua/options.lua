@@ -45,7 +45,7 @@ opt.whichwrap:append "<>[]hl"
 
 -- disable some builtin vim plugins
 local disabled_built_ins = {
-				"2html_plugin", "getscript", "getscriptPlugin", "gzip", "logipat", "netrw",
+    "2html_plugin", "getscript", "getscriptPlugin", "gzip", "logipat", "netrw",
     "netrwPlugin", "netrwSettings", "netrwFileHandlers", "matchit", "tar",
     "tarPlugin", "rrhelper", "spellfile_plugin", "vimball", "vimballPlugin",
     "zip", "zipPlugin",

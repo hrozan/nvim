@@ -4,16 +4,16 @@ local function map(mode, shortcut, command)
 end
 
 -- Base
-map("v", "p", '"_dP')
+map("v", "p", "\"_dP")
 map("n", "<Esc>", ":noh <CR>")
 map("n", "Y", "yg$")
 
-map('', '<C-q>', ':q!<cr>')
-map('', '<C-s>', ':w<cr>')
+map("", "<C-q>", ":q!<cr>")
+map("", "<C-s>", ":w<cr>")
 
-map('n', 'U', ':redo<cr>')
+map("n", "U", ":redo<cr>")
 
-map('t', '<Esc>', '<C-\\><C-n>')
+map("t", "<Esc>", "<C-\\><C-n>")
 
 map("n", "<C-a>", ":%y+ <CR>") -- copy whole file content
 
@@ -41,23 +41,23 @@ map("", "<A-2>", ":Telescope find_files<cr>")
 map("", "<A-3>", "<cmd>Trouble<cr>")
 
 -- Bufferline
-map('', '<A-q>', ':bd<cr>')
-map('n', 'gt', ':BufferLineCycleNext<cr>')
-map('n', 'gT', ':BufferLineCyclePrev<cr>')
-map('n', 'gy', ':BufferLinePick<cr>')
-map('n', 'gx', ':BufferLinePickClose<cr>')
+map("", "<A-q>", ":bd<cr>")
+map("n", "gt", ":BufferLineCycleNext<cr>")
+map("n", "gT", ":BufferLineCyclePrev<cr>")
+map("n", "gy", ":BufferLinePick<cr>")
+map("n", "gx", ":BufferLinePickClose<cr>")
 
 -- Hop
-map('n', 'f',
+map("n", "f",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
-map('n', 'F',
+map("n", "F",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
-map('o', 'f',
+map("o", "f",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>")
-map('o', 'F',
+map("o", "F",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>")
-map('', 't',
+map("", "t",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
-map('', 'T',
+map("", "T",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
-map('n', 'fw', ":HopWord <cr>")
+map("n", "fw", ":HopWord <cr>")

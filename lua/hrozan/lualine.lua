@@ -1,12 +1,11 @@
-local lualine = require('lualine') 
+local ok, lualine = pcall(require, "lualine")
+if not ok then return end
 
 lualine.setup {
     options = {
-        theme = 'github',
-        section_separators = '', 
-        component_separators = ''
+        theme = "github",
+        section_separators = "",
+        component_separators = "",
     },
-    sections = {
-        lualine_x = {'encoding', 'filetype'},
-    },
+    sections = {lualine_x = {"encoding", "filetype"}},
 }
