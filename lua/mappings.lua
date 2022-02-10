@@ -26,11 +26,11 @@ map("n", "<C-k>", "<C-w>k")
 map("n", "<C-j>", "<C-w>j")
 
 
--- Telescope
-map("", "<A-1>", ":Telescope find_files<cr>")
-
 -- Tree
-map("", "<A-2>", ":NvimTreeToggle<cr>")
+map("", "<A-1>", ":NvimTreeToggle<cr>")
+
+-- Telescope
+map("", "<A-2>", ":Telescope find_files<cr>")
 
 -- Troble
 map("", "<A-3>", "<cmd>Trouble<cr>")
