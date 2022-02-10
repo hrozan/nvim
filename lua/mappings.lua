@@ -12,6 +12,8 @@ map('', '<C-s>', ':w<cr>')
 
 map('n', 'U', ':redo<cr>')
 
+map('t', '<Esc>', '<C-\\><C-n>')
+
 map("n", "<C-a>", ":%y+ <CR>") -- copy whole file content
 
 -- GitSingh

@@ -1,11 +1,7 @@
-local theme = require('material')
+local github_theme = require('github-theme')
 
-vim.g.material_style = 'deep ocean'
-
-theme.setup{
-    disable = {
-        background = true, 
-    },
+github_theme.setup {
+    theme_style = 'dark_default',
+    transparent = true,
+    dark_float = true
 }
-
-vim.cmd 'colorscheme material'

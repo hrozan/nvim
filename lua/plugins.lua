@@ -18,7 +18,7 @@ startup(function(use)
 
     -- Theme
     use {
-        'marko-cerovac/material.nvim',
+        'projekt0n/github-nvim-theme',
         config = function() require('hrozan.theme') end
     } 
 
@@ -149,6 +149,13 @@ startup(function(use)
     }
 
     use 'folke/lsp-colors.nvim'
+
+    -- Terminal Toogle
+    use { 
+        "akinsho/toggleterm.nvim",
+        config = function() require('hrozan.toggleterm') end,
+
+    }
 
 end)
 
