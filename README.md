@@ -1,8 +1,8 @@
 # Neovim Files
 
-<div style="display: flex; justify-content: center">
-<img src="./docs/neovim-logo.png" alt="Neovim Logo" width="240px">
-<div/>
+<p aling="center">
+     <img src="./docs/neovim-logo.png" alt="Neovim Logo" width="120px">
+</p>
 
 This repo contains lua files that configure and add plugins to neovim editor
 
