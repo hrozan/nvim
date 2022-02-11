@@ -60,7 +60,6 @@ completionItem.resolveSupport = {
     properties = {"documentation", "detail", "additionalTextEdits"},
 }
 
-
 -- Load server
 local servers = {
     "tsserver", "yamlls", "jsonls", "bashls", "dockerls", "rust_analyzer",

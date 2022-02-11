@@ -1,4 +1,4 @@
-local ok, trouble = pcall(require, 'trouble')
+local ok, trouble = pcall(require, "trouble")
 if not ok then return end
 
 trouble.setup {
@@ -7,6 +7,6 @@ trouble.setup {
         warning = "",
         hint = "",
         information = "",
-        other = "﫠"
+        other = "﫠",
     },
 }
