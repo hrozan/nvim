@@ -1,6 +1,6 @@
 # Neovim Files
 
-![Neovim Logo](./docs/neovim-logo.png)
+<img src="./docs/neovim-logo.png" alt="Neovim Logo" width="360px">
 
 This repo contains lua files that configure and add plugins to neovim editor
 
