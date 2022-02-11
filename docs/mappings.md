@@ -1,7 +1,20 @@
 # Mappings
 
+### Nvim
+
+- `<C-q>` quit current tab
+- `<A-q>` save all and quit
+- `<C-s>` save all
+- `U` redi
+- `<C-a>` copy all content
+
+### Packer
+
+- `<C-p>` packer sync and reload 
+
 ### NvimTree
 
+- `<C-1>` toggle nvimtree 
 - `<CR>` or `o` on `..` will cd in the above directory
 - `<C-]>` will cd in the directory under the cursor
 - `<BS>` will close current opened directory or parent
@@ -27,3 +40,23 @@
 - `I` will toggle visibility of hidden folders / files
 - `H` will toggle visibility of dotfiles (files/folders starting with a `.`)
 - `R` will refresh the tree
+
+### GitSings
+
+- `gr` reset currnt hunk
+
+### Formatter
+
+- `<A-f>` format file
+
+### Telescope
+
+- `<A-2>` open find files
+
+### Trouble
+
+- `<A-3>` open trouble 
+
+### Hop
+
+- `fw` hop word

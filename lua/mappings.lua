@@ -3,31 +3,28 @@ local function map(mode, shortcut, command)
     vim.api.nvim_set_keymap(mode, shortcut, command, opt)
 end
 
--- Base
+-- Neovim
 map("v", "p", "\"_dP")
 map("n", "<Esc>", "<cmd>noh <cr>")
 map("n", "Y", "yg$")
-
 map("", "<C-q>", "<cmd>bd<cr>")
 map("", "<A-q>", "<cmd>wqa!<cr>")
 map("", "<C-s>", ":wa<cr>")
-
 map("n", "U", "<cmd>redo<cr>")
-
 map("t", "<Esc>", "<C-\\><C-n>")
-
-map("n", "<C-a>", ":%y+ <cr>") -- copy whole file content
-
-map("", "<leader-p>", ":PackerSync<cr>")
-
--- GitSingh
-map("n", "gr", ":Gitsigns reset_hunk<cr>")
-
--- Easier navigation between windows
+-- copy whole file content
+map("n", "<C-a>", ":%y+ <cr>")
+-- easier navigation between windows
 map("n", "<C-h>", "<C-w>h")
 map("n", "<C-l>", "<C-w>l")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-j>", "<C-w>j")
+
+-- Packer
+map("n", "<C-P>", ":PackerSync<cr>")
+
+-- GitSingh
+map("n", "gr", ":Gitsigns reset_hunk<cr>")
 
 -- Formatter
 map("n", "<A-f>", ":Format<cr>")
@@ -38,7 +35,7 @@ map("", "<A-1>", ":NvimTreeToggle<cr>")
 -- Telescope
 map("", "<A-2>", ":Telescope find_files<cr>")
 
--- Troble
+-- Trouble
 map("", "<A-3>", "<cmd>Trouble<cr>")
 
 -- Bufferline
