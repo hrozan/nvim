@@ -1,6 +1,9 @@
 # Neovim Files
 
+![Neovim Logo](./docs/neovim-logo.png)
+
 This repo contains lua files that configure and add plugins to neovim editor
+
       
 ### Docs
 - [Language Server Protocol](./docs/lsp.md)
