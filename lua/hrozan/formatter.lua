@@ -76,10 +76,3 @@ formatter.setup {
         },
     },
 }
-
-vim.api.nvim_exec([[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost *.vue,*.ts,*.rs,*.lua,*.json,*.yml FormatWrite
-augroup END
-]], true)

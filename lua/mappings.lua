@@ -5,19 +5,20 @@ end
 
 -- Base
 map("v", "p", "\"_dP")
-map("n", "<Esc>", ":noh <CR>")
+map("n", "<Esc>", "<cmd>noh <cr>")
 map("n", "Y", "yg$")
 
-map("", "<C-q>", ":q!<cr>")
-map("", "<C-s>", ":w<cr>")
+map("", "<C-q>", "<cmd>bd<cr>")
+map("", "<A-q>", "<cmd>wqa!<cr>")
+map("", "<C-s>", ":wa<cr>")
 
-map("n", "U", ":redo<cr>")
+map("n", "U", "<cmd>redo<cr>")
 
 map("t", "<Esc>", "<C-\\><C-n>")
 
-map("n", "<C-a>", ":%y+ <CR>") -- copy whole file content
+map("n", "<C-a>", ":%y+ <cr>") -- copy whole file content
 
-map("", "<leader-p>", ":PackerSync<CR>")
+map("", "<leader-p>", ":PackerSync<cr>")
 
 -- GitSingh
 map("n", "gr", ":Gitsigns reset_hunk<cr>")
@@ -29,7 +30,7 @@ map("n", "<C-k>", "<C-w>k")
 map("n", "<C-j>", "<C-w>j")
 
 -- Formatter
-map("n", "<A-f>", ":Format<CR>")
+map("n", "<A-f>", ":Format<cr>")
 
 -- Tree
 map("", "<A-1>", ":NvimTreeToggle<cr>")
@@ -41,7 +42,6 @@ map("", "<A-2>", ":Telescope find_files<cr>")
 map("", "<A-3>", "<cmd>Trouble<cr>")
 
 -- Bufferline
-map("", "<A-q>", ":bd<cr>")
 map("n", "gt", ":BufferLineCycleNext<cr>")
 map("n", "gT", ":BufferLineCyclePrev<cr>")
 map("n", "gy", ":BufferLinePick<cr>")
