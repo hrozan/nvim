@@ -58,11 +58,11 @@ startup(function(use)
     }
 
     -- Hop
-    use {
-        "phaazon/hop.nvim",
-        branch = "v1",
-        config = function() require("hrozan.hop") end,
-    }
+    -- use {
+    --     "phaazon/hop.nvim",
+    --     branch = "v1",
+    --     config = function() require("hrozan.hop") end,
+    -- }
 
     -- Colorizer
     use {
