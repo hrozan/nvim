@@ -19,7 +19,7 @@ startup(function(use)
 
     -- Theme
     use {
-        "projekt0n/github-nvim-theme",
+        "marko-cerovac/material.nvim",
         config = function() require("hrozan.theme") end,
     }
 

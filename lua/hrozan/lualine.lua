@@ -2,7 +2,7 @@ local lualine = require("lualine")
 
 lualine.setup {
     options = {
-        theme = "github",
+        theme = "auto",
         section_separators = "",
         component_separators = "",
     },
