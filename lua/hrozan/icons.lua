@@ -1,4 +1,3 @@
-local ok, devicons = pcall(require, "nvim-web-devicons")
-if not ok then return end
+local devicons = require("nvim-web-devicons")
 
 devicons.setup {}

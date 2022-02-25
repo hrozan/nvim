@@ -1,4 +1,3 @@
-local ok, toggleterm = pcall(require, "toggleterm")
-if not ok then return end
+local toggleterm = require("toggleterm")
 
 toggleterm.setup {open_mapping = [[<A-6>]]}

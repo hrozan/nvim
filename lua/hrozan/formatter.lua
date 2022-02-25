@@ -1,5 +1,4 @@
-local ok, formatter = pcall(require, "formatter")
-if not ok then return end
+local formatter = require("formatter")
 
 formatter.setup {
     filetype = {

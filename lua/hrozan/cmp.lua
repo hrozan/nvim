@@ -1,8 +1,4 @@
-local ok, cmp = pcall(require, "cmp")
-if not ok then return end
-
-local luasnip_ok, luasnip = pcall(require, "luasnip")
-if not luasnip_ok then return end
+local cmp = require("cmp")
 
 vim.opt.completeopt = "menuone,noselect"
 
@@ -35,7 +31,9 @@ local icons = {
 }
 
 cmp.setup {
-    snippet = {expand = function(args) luasnip.lsp_expand(args.body) end},
+    snippet = {
+        expand = function(args) require("luasnip").lsp_expand(args.body) end,
+    },
 
     formatting = {
         format = function(entry, vim_item)
@@ -69,7 +67,7 @@ cmp.setup {
         ["<Tab>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
+            elseif require("luasnip").expand_or_jumpable() then
                 vim.fn.feedkeys(vim.api.nvim_replace_termcodes(
                                     "<Plug>luasnip-expand-or-jump", true, true,
                                     true), "")
@@ -81,7 +79,7 @@ cmp.setup {
         ["<S-Tab>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
+            elseif require("luasnip").jumpable(-1) then
                 vim.fn.feedkeys(vim.api.nvim_replace_termcodes(
                                     "<Plug>luasnip-jump-prev", true, true, true),
                                 "")

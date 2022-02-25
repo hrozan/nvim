@@ -1,5 +1,4 @@
-local ok, tree = pcall(require, "nvim-tree")
-if not ok then return end
+local tree = require("nvim-tree")
 
 local g = vim.g
 

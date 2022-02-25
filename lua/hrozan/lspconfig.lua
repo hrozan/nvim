@@ -1,8 +1,5 @@
-local ok, lsp = pcall(require, "lspconfig")
-if not ok then return end
-
-local signature_ok, signature = pcall(require, "lsp_signature")
-if not signature_ok then return end
+local lsp = require("lspconfig")
+local signature = require("lsp_signature")
 
 -- Change diagnostic icon
 vim.diagnostic.config({virtual_text = false})
@@ -46,7 +43,19 @@ end
 -- Load capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local completionItem = capabilities.textDocument.completion.completionItem
+
+completionItem.documentationFormat = {"markdown", "plaintext"}
 completionItem.snippetSupport = true
+completionItem.preselectSupport = true
+completionItem.insertReplaceSupport = true
+completionItem.labelDetailsSupport = true
+completionItem.deprecatedSupport = true
+completionItem.commitCharactersSupport = true
+completionItem.tagSupport = {valueSet = {1}}
+completionItem.resolveSupport = {
+    properties = {"documentation", "detail", "additionalTextEdits"},
+}
+
 
 -- Load server
 local servers = {

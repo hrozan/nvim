@@ -1,4 +1,3 @@
-local ok, autopairs = pcall(require, "nvim-autopairs")
-if not ok then return end
+local autopairs = require("nvim-autopairs")
 
 autopairs.setup()

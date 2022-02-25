@@ -1,5 +1,4 @@
-local ok, blankline = pcall(require, "indent_blankline")
-if not ok then return end
+local blankline = require("indent_blankline")
 
 blankline.setup {
     indentLine_enabled = 1,

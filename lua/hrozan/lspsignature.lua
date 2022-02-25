@@ -1,4 +1,3 @@
-local ok, signature = pcall(require, "lsp_signature")
-if not ok then return end
+local signature = require("lsp_signature")
 
 signature.setup()

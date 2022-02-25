@@ -1,4 +1,3 @@
-local ok, hop = pcall(require, "hop")
-if not ok then return end
+local hop = require("hop")
 
 hop.setup {keys = "etovxqpdygfblzhckisuran"}

@@ -1,5 +1,4 @@
-local ok, github_theme = pcall(require, "github-theme")
-if not ok then return end
+local github_theme = require("github-theme")
 
 github_theme.setup {
     theme_style = "dark_default",
