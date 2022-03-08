@@ -164,4 +164,10 @@ startup(function(use)
         requires = "nvim-lua/plenary.nvim",
         config = function() require("hrozan.todo") end,
     }
+
+    -- Markdown
+    use {
+        "iamcco/markdown-preview.nvim", 
+        run = "cd app && yarn install",
+    }
 end)
