@@ -60,7 +60,7 @@ completionItem.resolveSupport = {
 -- Load server
 local servers = {
     "tsserver", "yamlls", "jsonls", "bashls", "dockerls", "rust_analyzer",
-    "clangd", "sumneko_lua", "ltex"
+    "clangd", "sumneko_lua"
 }
 
 for _, s in pairs(servers) do
