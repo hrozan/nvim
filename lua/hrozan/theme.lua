@@ -1,7 +1,7 @@
-local github_theme = require("github-theme")
+local onedark = require('onedark')
 
-github_theme.setup {
-    theme_style = "dark_default",
-    transparent = true,
-    dark_float = true,
+onedark.setup {
+    transparent = true
 }
+
+onedark.load()
