@@ -3,6 +3,8 @@ local function map(mode, shortcut, command)
     vim.api.nvim_set_keymap(mode, shortcut, command, opt)
 end
 
+vim.cmd [[let g:CtrlSpaceDefaultMappingKey = "<C-space> "]]
+
 -- Neovim
 map("v", "p", "\"_dP")
 map("n", "<Esc>", "<cmd>noh <cr>")
@@ -11,6 +13,7 @@ map("", "<A-q>", "<cmd>bd<cr>")
 map("", "<C-q>", "<cmd>wqa!<cr>")
 map("", "<C-s>", ":wa<cr>")
 map("n", "U", "<cmd>redo<cr>")
+map("n", "<C-z>", "<cmd>undo<cr>")
 map("t", "<Esc>", "<C-\\><C-n>")
 -- copy whole file content
 map("n", "<C-a>", ":%y+ <cr>")
