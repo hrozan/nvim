@@ -1,5 +1,8 @@
 local function map(mode, shortcut, command)
-    local opt = {noremap = true, silent = true}
+    local opt = {
+        noremap = true,
+        silent = true
+    }
     vim.api.nvim_set_keymap(mode, shortcut, command, opt)
 end
 
@@ -42,3 +45,5 @@ map("", "t",
 map("", "T",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
 map("n", "fw", ":HopWord <cr>")
+
+map("", "<A-2>", "<cmd>lua require'utils'.ToggleNumbers()<cr>")

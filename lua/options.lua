@@ -1,6 +1,10 @@
 local opt = vim.opt
 local g = vim.g
 
+vim.cmd([[
+    set guifont=JetBrainsMonoMedium\ Nerd\ Font:h13
+]])
+
 opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cmdheight = 1
@@ -17,9 +21,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
 
-opt.number = true
 opt.numberwidth = 2
-opt.relativenumber = true
 opt.ruler = false
 
 opt.shortmess:append "sI"
