@@ -5,49 +5,30 @@ end
 
 vim.cmd [[let g:CtrlSpaceDefaultMappingKey = "<C-space> "]]
 
--- Neovim
 map("v", "p", "\"_dP")
 map("n", "<Esc>", "<cmd>noh <cr>")
 map("n", "Y", "yg$")
 map("", "<A-q>", "<cmd>bd<cr>")
-map("", "<C-q>", "<cmd>wqa!<cr>")
+map("", "<C-q>", "<cmd>wq!<cr>")
 map("", "<C-s>", ":wa<cr>")
 map("n", "U", "<cmd>redo<cr>")
 map("n", "<C-z>", "<cmd>undo<cr>")
 map("t", "<Esc>", "<C-\\><C-n>")
--- copy whole file content
 map("n", "<C-a>", ":%y+ <cr>")
--- easier navigation between windows
 map("n", "<C-h>", "<C-w>h")
 map("n", "<C-l>", "<C-w>l")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-j>", "<C-w>j")
 
--- Packer
 map("n", "<C-P>", ":PackerSync<cr>")
-
--- GitSingh
 map("n", "gr", ":Gitsigns reset_hunk<cr>")
-
--- Formatter
 map("n", "<A-f>", ":Format<cr>")
-
--- Tree
 map("", "<A-1>", ":NvimTreeToggle<cr>")
-
--- Telescope
-map("", "<A-2>", ":Telescope find_files<cr>")
-
--- Trouble
-map("", "<A-3>", "<cmd>Trouble<cr>")
-
--- Bufferline
 map("n", "gt", ":BufferLineCycleNext<cr>")
 map("n", "gT", ":BufferLineCyclePrev<cr>")
 map("n", "gy", ":BufferLinePick<cr>")
 map("n", "gx", ":BufferLinePickClose<cr>")
 
--- Hop
 map("n", "f",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
 map("n", "F",

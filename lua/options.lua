@@ -6,8 +6,6 @@ opt.clipboard = "unnamedplus"
 opt.cmdheight = 1
 opt.cul = true
 opt.swapfile = false
-
--- Indentline
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.smartindent = true
@@ -19,15 +17,12 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
 
--- Numbers
 opt.number = true
 opt.numberwidth = 2
 opt.relativenumber = true
 opt.ruler = false
 
--- disable nvim intro
 opt.shortmess:append "sI"
-
 opt.signcolumn = "yes"
 opt.splitbelow = true
 opt.splitright = true
@@ -35,15 +30,9 @@ opt.tabstop = 8
 opt.termguicolors = true
 opt.timeoutlen = 400
 opt.undofile = true
-
--- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
-
--- go to previous/next line with h,l,left arrow and right arrow
--- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
 
--- disable some builtin vim plugins
 local disabled_built_ins = {
     "2html_plugin", "getscript", "getscriptPlugin", "gzip", "logipat", "netrw",
     "netrwPlugin", "netrwSettings", "netrwFileHandlers", "matchit", "tar",
