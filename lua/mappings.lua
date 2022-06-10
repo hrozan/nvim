@@ -8,6 +8,11 @@ end
 
 vim.cmd [[let g:CtrlSpaceDefaultMappingKey = "<C-space> "]]
 
+map("n", "<A-f>", ":Format<cr>")
+map("", "<A-1>", ":NvimTreeToggle<cr>")
+map("", "<A-2>", "<cmd>lua require'utils'.ToggleNumbers()<cr>")
+map("", "<A-3>", "<cmd>Trouble<cr>")
+
 map("v", "p", "\"_dP")
 map("n", "<Esc>", "<cmd>noh <cr>")
 map("n", "Y", "yg$")
@@ -25,8 +30,6 @@ map("n", "<C-j>", "<C-w>j")
 
 map("n", "<C-P>", ":PackerSync<cr>")
 map("n", "gr", ":Gitsigns reset_hunk<cr>")
-map("n", "<A-f>", ":Format<cr>")
-map("", "<A-1>", ":NvimTreeToggle<cr>")
 map("n", "gt", ":BufferLineCycleNext<cr>")
 map("n", "gT", ":BufferLineCyclePrev<cr>")
 map("n", "gy", ":BufferLinePick<cr>")
@@ -45,5 +48,3 @@ map("", "t",
 map("", "T",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
 map("n", "fw", ":HopWord <cr>")
-
-map("", "<A-2>", "<cmd>lua require'utils'.ToggleNumbers()<cr>")

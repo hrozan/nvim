@@ -5,35 +5,35 @@ require("packer").startup(function(use)
     use "editorconfig/editorconfig-vim"
 
     use {
-        "projekt0n/github-nvim-theme",
-        config = function()
-            require('github-theme').setup {
-                theme_style = "dark_default",
-                transparent = true,
-                dark_float = true
+        "marko-cerovac/material.nvim", config = function()
+            require("material").setup {
+                disable = {
+                    background = true,
+                }
             }
+
+            vim.g.material_style = "deep ocean"
+            vim.cmd 'colorscheme material'
         end
     }
+
     use {
         "kyazdani42/nvim-web-devicons",
         config = function()
-            local devicons = require("nvim-web-devicons")
-            devicons.setup()
+            require("nvim-web-devicons").setup()
         end
     }
     use {
         "kyazdani42/nvim-tree.lua",
         require = "kyazdani42/nvim-web-devicons",
         config = function()
-            local tree = require("nvim-tree")
-
-            tree.setup {
+            require("nvim-tree").setup {
                 actions = {
                     open_file = {
                         window_picker = {
                             exclude = {
-                                filetype = {"notify", "packer", "qf"},
-                                buftype = {"terminal"}
+                                filetype = { "notify", "packer", "qf" },
+                                buftype = { "terminal" }
                             }
                         },
                         quit_on_open = true
@@ -42,7 +42,7 @@ require("packer").startup(function(use)
                 filters = {
                     dotfiles = false
                 },
-                ignore_ft_on_setup = {"dashboard"},
+                ignore_ft_on_setup = { "dashboard" },
                 open_on_tab = false,
                 update_cwd = true,
                 update_focused_file = {
@@ -60,8 +60,7 @@ require("packer").startup(function(use)
     use {
         "nvim-treesitter/nvim-treesitter",
         config = function()
-            local treesitter = require("nvim-treesitter.configs")
-            treesitter.setup {
+            require("nvim-treesitter.configs").setup {
                 ensure_installed = "all",
                 sync_install = false,
                 highlight = {
@@ -81,20 +80,32 @@ require("packer").startup(function(use)
         config = function()
             require("lualine").setup {
                 options = {
-                    theme = "github_dark_default",
+                    theme = "auto",
                     section_separators = "",
                     component_separators = ""
                 },
                 sections = {
-                    lualine_x = {"encoding", "filetype"}
+                    lualine_x = { "encoding", "filetype" }
                 }
 
             }
         end
     }
+
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {
+                auto_close = true,
+                auto_preview = false
+            }
+        end
+    }
+
     use {
         "lewis6991/gitsigns.nvim",
-        requires = {"nvim-lua/plenary.nvim"},
+        requires = { "nvim-lua/plenary.nvim" },
         config = function()
             local gitsigns = require("gitsigns")
             gitsigns.setup()
@@ -161,7 +172,7 @@ require("packer").startup(function(use)
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             local completionItem = capabilities.textDocument.completion.completionItem
-            local servers = {"tsserver", "yamlls", "jsonls", "rust_analyzer"}
+            local servers = { "tsserver", "yamlls", "jsonls", "rust_analyzer" }
 
             for _, s in pairs(servers) do
                 lsp[s].setup {
@@ -196,7 +207,7 @@ require("packer").startup(function(use)
             end
         end
     }
-    
+
     use {
         "hrsh7th/cmp-nvim-lsp"
     }
@@ -292,13 +303,13 @@ require("packer").startup(function(use)
                         end
                     end
                 },
-                sources = cmp.config.sources {{
+                sources = cmp.config.sources { {
                     name = "nvim_lsp"
                 }, {
                     name = "luasnip"
                 }, {
                     name = "path"
-                }}
+                } }
             }
 
         end
@@ -318,11 +329,11 @@ require("packer").startup(function(use)
             local bufferline = require("bufferline")
             bufferline.setup {
                 options = {
-                    offsets = {{
+                    offsets = { {
                         filetype = "NvimTree",
                         text = "File Explore",
                         padding = 1
-                    }},
+                    } },
                     buffer_close_icon = "",
                     modified_icon = "",
                     left_trunc_marker = "",
@@ -373,13 +384,13 @@ require("packer").startup(function(use)
             local formatter = require("formatter")
             formatter.setup {
                 filetype = {
-                    markdown = {function()
+                    markdown = { function()
                         return {
                             exe = "prettier",
-                            args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+                            args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
                             stdin = true
                         }
-                    end}
+                    end }
                 }
             }
 

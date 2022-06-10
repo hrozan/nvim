@@ -21,6 +21,8 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
 
+opt.number = true
+opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = false
 

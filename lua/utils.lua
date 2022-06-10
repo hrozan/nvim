@@ -1,17 +1,15 @@
 local M = {}
 
 M.ToggleNumbers = function()
-    if (vim.opt.number and vim.opt.relativenumber) then
-        vim.cmd([[
-            set nu
-            set rnu
-        ]])
-    else
-        vim.cmd([[
-            set nonu
-            set nornu
-        ]])
+    if vim.o.number then
+        vim.cmd("set nonu")
+        vim.cmd("set nornu")
+        print("Numbers Off")
+        return
     end
+    vim.cmd("set nu")
+    vim.cmd("set rnu")
+    print("Numbers On")
 end
 
 return M
