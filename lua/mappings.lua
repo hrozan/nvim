@@ -1,19 +1,19 @@
 local function map(mode, shortcut, command)
-    local opt = {
-        noremap = true,
-        silent = true
-    }
-    vim.api.nvim_set_keymap(mode, shortcut, command, opt)
+	local opt = {
+		noremap = true,
+		silent = true,
+	}
+	vim.api.nvim_set_keymap(mode, shortcut, command, opt)
 end
 
-vim.cmd [[let g:CtrlSpaceDefaultMappingKey = "<C-space> "]]
+vim.cmd([[let g:CtrlSpaceDefaultMappingKey = "<C-space> "]])
 
 map("n", "<A-f>", ":Format<cr>")
 map("", "<A-1>", ":NvimTreeToggle<cr>")
 map("", "<A-2>", "<cmd>lua require'utils'.ToggleNumbers()<cr>")
 map("", "<A-3>", "<cmd>Trouble<cr>")
 
-map("v", "p", "\"_dP")
+map("v", "p", '"_dP')
 map("n", "<Esc>", "<cmd>noh <cr>")
 map("n", "Y", "yg$")
 map("", "<A-q>", "<cmd>bd<cr>")
@@ -35,16 +35,34 @@ map("n", "gT", ":BufferLineCyclePrev<cr>")
 map("n", "gy", ":BufferLinePick<cr>")
 map("n", "gx", ":BufferLinePickClose<cr>")
 
-map("n", "f",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
-map("n", "F",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
-map("o", "f",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>")
-map("o", "F",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>")
-map("", "t",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
-map("", "T",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
+map(
+	"n",
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+)
+map(
+	"n",
+	"F",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+)
+map(
+	"o",
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>"
+)
+map(
+	"o",
+	"F",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>"
+)
+map(
+	"",
+	"t",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+)
+map(
+	"",
+	"T",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+)
 map("n", "fw", ":HopWord <cr>")
