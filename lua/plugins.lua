@@ -1,7 +1,6 @@
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
-	use("tpope/vim-fugitive")
 	use("editorconfig/editorconfig-vim")
 
 	use({
@@ -24,6 +23,7 @@ require("packer").startup(function(use)
 			require("nvim-web-devicons").setup()
 		end,
 	})
+
 	use({
 		"kyazdani42/nvim-tree.lua",
 		require = "kyazdani42/nvim-web-devicons",
@@ -57,6 +57,15 @@ require("packer").startup(function(use)
 			})
 		end,
 	})
+
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "v1.*",
+		config = function()
+			require("toggleterm").setup({})
+		end,
+	})
+
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
@@ -70,6 +79,7 @@ require("packer").startup(function(use)
 			})
 		end,
 	})
+
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = {
@@ -109,6 +119,7 @@ require("packer").startup(function(use)
 			gitsigns.setup()
 		end,
 	})
+
 	use({
 		"phaazon/hop.nvim",
 		branch = "v1",
@@ -119,6 +130,7 @@ require("packer").startup(function(use)
 			})
 		end,
 	})
+
 	use({
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -148,7 +160,7 @@ require("packer").startup(function(use)
 				map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
 				map("n", "kt", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
 				map("n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
-				map("n", "<C-space>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+				map("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
 			end
 
 			local signs = {
@@ -167,15 +179,12 @@ require("packer").startup(function(use)
 			end
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			local servers = { "sumneko_lua", "yamlls", "jsonls", "ltex" }
-
+			local servers = { "sumneko_lua", "yamlls", "jsonls", "marksman" }
 			for _, s in pairs(servers) do
 				lsp[s].setup({
 					capabilities = capabilities,
 					on_attach = on_attach,
-					flags = {
-						debounce_text_changes = 150,
-					},
+					flags = { debounce_text_changes = 150 },
 				})
 			end
 		end,
@@ -205,10 +214,12 @@ require("packer").startup(function(use)
 	use({
 		"hrsh7th/cmp-nvim-lsp",
 	})
+
 	use({
 		"hrsh7th/cmp-path",
 		after = "cmp-nvim-lsp",
 	})
+
 	use({
 		"hrsh7th/nvim-cmp",
 		config = function()
@@ -323,6 +334,7 @@ require("packer").startup(function(use)
 			comment.setup()
 		end,
 	})
+
 	use({
 		"akinsho/bufferline.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
@@ -373,6 +385,7 @@ require("packer").startup(function(use)
 			})
 		end,
 	})
+
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
@@ -380,17 +393,33 @@ require("packer").startup(function(use)
 			autopairs.setup()
 		end,
 	})
+
 	use({
 		"mhartington/formatter.nvim",
 		config = function()
-			local formatter = require("formatter")
-			formatter.setup({
+			local util = require("formatter.util")
+			require("formatter").setup({
 				filetype = {
 					markdown = {
 						function()
 							return {
 								exe = "prettier",
 								args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+								stdin = true,
+							}
+						end,
+					},
+					lua = {
+						function()
+							return {
+								exe = "stylua",
+								args = {
+									"--search-parent-directories",
+									"--stdin-filepath",
+									util.escape_path(util.get_current_buffer_file_path()),
+									"--",
+									"-",
+								},
 								stdin = true,
 							}
 						end,

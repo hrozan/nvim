@@ -1,9 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
-vim.cmd([[
-    set guifont=JetBrainsMonoMedium\ Nerd\ Font:h13
-]])
+vim.cmd([[set guifont=JetBrainsMonoMedium\ Nerd\ Font:h13]])
 
 opt.title = true
 opt.clipboard = "unnamedplus"

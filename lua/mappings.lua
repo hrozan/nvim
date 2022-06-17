@@ -6,12 +6,12 @@ local function map(mode, shortcut, command)
 	vim.api.nvim_set_keymap(mode, shortcut, command, opt)
 end
 
-vim.cmd([[let g:CtrlSpaceDefaultMappingKey = "<C-space> "]])
-
-map("n", "<A-f>", ":Format<cr>")
-map("", "<A-1>", ":NvimTreeToggle<cr>")
-map("", "<A-2>", "<cmd>lua require'utils'.ToggleNumbers()<cr>")
+map("", "<A-0>", "<cmd>lua require'utils'.ToggleNumbers()<cr>")
+map("", "<A-f>", "<cmd>Format<cr>")
+map("", "<A-1>", "<cmd>NvimTreeToggle<cr>")
+map("", "<A-2>", "<cmd>ToggleTerm<cr>")
 map("", "<A-3>", "<cmd>Trouble<cr>")
+map("", "<A-4>", "<cmd>Luadev<cr>")
 
 map("v", "p", '"_dP')
 map("n", "<Esc>", "<cmd>noh <cr>")
@@ -30,6 +30,7 @@ map("n", "<C-j>", "<C-w>j")
 
 map("n", "<C-P>", ":PackerSync<cr>")
 map("n", "gr", ":Gitsigns reset_hunk<cr>")
+
 map("n", "gt", ":BufferLineCycleNext<cr>")
 map("n", "gT", ":BufferLineCyclePrev<cr>")
 map("n", "gy", ":BufferLinePick<cr>")
