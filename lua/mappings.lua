@@ -9,9 +9,9 @@ end
 map("", "<A-0>", "<cmd>lua require'utils'.ToggleNumbers()<cr>")
 map("", "<A-f>", "<cmd>Format<cr>")
 map("", "<A-1>", "<cmd>NvimTreeToggle<cr>")
-map("", "<A-2>", "<cmd>ToggleTerm<cr>")
+map("", "<A-2>", "<cmd>Telescope find_files<cr>")
 map("", "<A-3>", "<cmd>Trouble<cr>")
-map("", "<A-4>", "<cmd>Luadev<cr>")
+map("", "<A-6>", "<cmd>ToggleTerm<cr>")
 
 map("v", "p", '"_dP')
 map("n", "<Esc>", "<cmd>noh <cr>")

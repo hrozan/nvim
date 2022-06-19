@@ -112,6 +112,14 @@ require("packer").startup(function(use)
 	})
 
 	use({
+		"nvim-telescope/telescope.nvim",
+		requires = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("telescope").setup()
+		end,
+	})
+
+	use({
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = function()
@@ -169,6 +177,7 @@ require("packer").startup(function(use)
 				Hint = " ",
 				Info = " ",
 			}
+
 			for type, icon in pairs(signs) do
 				local hl = "DiagnosticSign" .. type
 				vim.fn.sign_define(hl, {
@@ -179,7 +188,7 @@ require("packer").startup(function(use)
 			end
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			local servers = { "sumneko_lua", "yamlls", "jsonls", "marksman" }
+			local servers = { "sumneko_lua", "yamlls", "jsonls", "bashls", "marksman" }
 			for _, s in pairs(servers) do
 				lsp[s].setup({
 					capabilities = capabilities,
