@@ -188,7 +188,7 @@ require("packer").startup(function(use)
 			end
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			local servers = { "sumneko_lua", "yamlls", "jsonls", "bashls", "marksman", "tsserver" }
+			local servers = { "sumneko_lua", "yamlls", "jsonls", "bashls", "tsserver" }
 			for _, s in pairs(servers) do
 				lsp[s].setup({
 					capabilities = capabilities,
