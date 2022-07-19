@@ -1,4 +1,4 @@
-require("packer").startup(function(use)
+return function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("editorconfig/editorconfig-vim")
@@ -418,6 +418,24 @@ require("packer").startup(function(use)
 							}
 						end,
 					},
+					typescript = {
+						function()
+							return {
+								exe = "prettier",
+								args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+								stdin = true,
+							}
+						end,
+					},
+					vue = {
+						function()
+							return {
+								exe = "prettier",
+								args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+								stdin = true,
+							}
+						end,
+					},
 					lua = {
 						function()
 							return {
@@ -437,4 +455,4 @@ require("packer").startup(function(use)
 			})
 		end,
 	})
-end)
+end
