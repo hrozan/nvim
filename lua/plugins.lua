@@ -1,4 +1,16 @@
-return function(use)
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+	PackerBootstrap = vim.fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+end
+
+return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("editorconfig/editorconfig-vim")
@@ -6,14 +18,7 @@ return function(use)
 	use({
 		"marko-cerovac/material.nvim",
 		config = function()
-			require("material").setup({
-				disable = {
-					background = true,
-				},
-			})
-
-			vim.g.material_style = "deep ocean"
-			vim.cmd("colorscheme material")
+			require("material").setup()
 		end,
 	})
 
@@ -37,7 +42,6 @@ return function(use)
 								buftype = { "terminal" },
 							},
 						},
-						quit_on_open = true,
 					},
 				},
 				filters = {
@@ -51,7 +55,7 @@ return function(use)
 					update_cwd = false,
 				},
 				view = {
-					width = 40,
+					width = 45,
 					side = "right",
 				},
 			})
@@ -60,7 +64,6 @@ return function(use)
 
 	use({
 		"akinsho/toggleterm.nvim",
-		tag = "v1.*",
 		config = function()
 			require("toggleterm").setup({})
 		end,
@@ -90,8 +93,6 @@ return function(use)
 			require("lualine").setup({
 				options = {
 					theme = "auto",
-					section_separators = "",
-					component_separators = "",
 				},
 				sections = {
 					lualine_x = { "encoding", "filetype" },
@@ -455,4 +456,7 @@ return function(use)
 			})
 		end,
 	})
-end
+	if PackerBootstrap then
+		require("packer").sync()
+	end
+end)
