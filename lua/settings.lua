@@ -12,3 +12,4 @@ vim.o.mouse = "a"
 vim.o.undofile = true
 
 vim.cmd("colorscheme material")
+vim.cmd("setlocal spell spelllang=pt_br,en")
