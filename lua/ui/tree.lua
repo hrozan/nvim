@@ -9,9 +9,6 @@ require("nvim-tree").setup({
 			},
 		},
 	},
-	filters = {
-		dotfiles = false,
-	},
 	ignore_ft_on_setup = { "dashboard" },
 	open_on_tab = false,
 	update_cwd = true,
@@ -20,7 +17,7 @@ require("nvim-tree").setup({
 		update_cwd = false,
 	},
 	view = {
-		width = 45,
+		width = 55,
 		side = "right",
 	},
 })

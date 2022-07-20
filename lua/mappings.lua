@@ -17,9 +17,6 @@ map("n", "fw", ":HopWord <cr>")
 map("n", "<Esc>", ":noh<cr>")
 map("t", "<Esc>", "<C-\\><C-n>")
 
-map("v", "<Leader-y>", '"+y<cr>')
-map("n", "<Leader-p>", '"+p<cr>')
-
 map("n", "<A-0>", ":setlocal spell!<cr>")
 map("n", "<A-1>", ":NvimTreeToggle<cr>")
 map("n", "<A-6>", ":Trouble<cr>")
@@ -35,4 +32,3 @@ map("n", "<C-n>", ":Telescope find_files<cr>")
 map("n", "<C-l>", "<C-w>l")
 map("n", "<C-z>", ":undo<cr>")
 map("n", "<C-p>", ":PackerCompile<cr>")
-
