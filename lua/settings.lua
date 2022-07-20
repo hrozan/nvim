@@ -3,13 +3,13 @@ vim.o.guifont = "JetBrainsMonoMedium Nerd Font:h13"
 vim.o.number = true
 vim.o.numberwidth = 2
 vim.o.relativenumber = true
-vim.o.clipboard = "unnamedplus"
 vim.o.swapfile = false
 vim.o.termguicolors = true
 vim.o.shiftwidth = 4
 vim.o.smartindent = true
 vim.o.mouse = "a"
 vim.o.undofile = true
+vim.o.spelllang="pt_br,en"
 
 vim.cmd("colorscheme material")
-vim.cmd [[ autocmd BufRead, BufNewFile *.md setlocal spell spelllang=pt_br]]
+

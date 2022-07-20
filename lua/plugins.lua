@@ -152,7 +152,7 @@ return require("packer").startup(function(use)
 	use({
 		"mhartington/formatter.nvim",
 		config = function()
-			require("engine.formatter")
+			require("engine.format")
 		end,
 	})
 
