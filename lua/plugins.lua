@@ -104,6 +104,14 @@ return require("packer").startup(function(use)
 	})
 
 	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			require("ui.widgets")
+		end,
+	})
+
+	use({
 		"rafamadriz/friendly-snippets",
 		event = "InsertEnter",
 	})

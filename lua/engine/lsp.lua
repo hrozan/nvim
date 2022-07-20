@@ -18,6 +18,8 @@ local opt = {
 	silent = true,
 }
 
+vim.diagnostic.config({ virtual_text = false })
+
 local function on_attach(_, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":lua vim.lsp.buf.definition()<cr>", opt)

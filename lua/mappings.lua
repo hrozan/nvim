@@ -19,7 +19,8 @@ map("t", "<Esc>", "<C-\\><C-n>")
 
 map("n", "<A-0>", ":setlocal spell!<cr>")
 map("n", "<A-1>", ":NvimTreeToggle<cr>")
-map("n", "<A-6>", ":Trouble<cr>")
+map("n", "<A-3>", ":Trouble<cr>")
+map("n", "<A-t>", ":ToggleTerm<cr>")
 map("n", "<A-f>", ":Format<cr>")
 
 map("n", "<C-a>", ":%y+ <cr>")
