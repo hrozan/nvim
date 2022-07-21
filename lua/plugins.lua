@@ -18,7 +18,7 @@ return require("packer").startup(function(use)
 	use({
 		"marko-cerovac/material.nvim",
 		config = function()
-			require("material").setup()
+			require("ui.theme")
 		end,
 	})
 

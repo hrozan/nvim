@@ -1,4 +1,3 @@
-vim.g.material_style = "deep ocean"
 vim.o.guifont = "JetBrainsMonoMedium Nerd Font:h12"
 vim.o.number = true
 vim.o.numberwidth = 2
@@ -24,6 +23,3 @@ vim.o.tabstop = 8
 vim.opt.shortmess:append("sI")
 vim.opt.whichwrap:append("<>[]hl")
 vim.opt.fillchars = { eob = " " }
-
-
-vim.cmd("colorscheme material")
