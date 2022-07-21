@@ -1,7 +1,9 @@
-name: Deploy Docs
+name: hrozan/nvim
+
 on: [push]
+
 jobs:
-  deploy:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

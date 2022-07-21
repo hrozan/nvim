@@ -1,6 +1,7 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local packer_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	PackerBootstrap = vim.fn.system({
+	packer_bootstrap = vim.fn.system({
 		"git",
 		"clone",
 		"--depth",
@@ -164,7 +165,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	if PackerBootstrap then
+	if packer_bootstrap then
 		require("packer").sync()
 	end
 end)
