@@ -1,5 +1,6 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 local packer_bootstrap = false
+
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	packer_bootstrap = vim.fn.system({
 		"git",
@@ -11,16 +12,16 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	})
 end
 
-return require("packer").startup(function(use)
+local packer = require("packer")
+
+packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("editorconfig/editorconfig-vim")
 
 	use({
 		"marko-cerovac/material.nvim",
-		config = function()
-			require("ui.theme")
-		end,
+		config = require("ui.theme"),
 	})
 
 	use({
