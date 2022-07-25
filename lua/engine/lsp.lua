@@ -4,9 +4,6 @@ local servers = {
 	"jsonls",
 	"bashls",
 	"tsserver",
-	"eslint",
-	"volar",
-	"clangd",
 }
 
 local signs = {
