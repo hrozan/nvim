@@ -5,6 +5,11 @@ material.setup {
   disable = {
     background = true,
   },
+  italics = {
+    comments = true,
+    functions = true,
+    variables = true,
+  },
 }
 
 vim.g.material_style = 'deep ocean'
