@@ -4,8 +4,11 @@ end
 
 require 'edit.find'
 
+map('n', 'gt', ':BufferLineCycleNext<cr>')
+map('n', 'gT', ':BufferLineCyclePrev<cr>')
 map('n', 'gt', ':BufferLinePick<cr>')
 map('n', 'gx', ':BufferLinePickClose<cr>')
+
 map('n', 'f', ':lua require("edit.find").nf()<cr>')
 map('n', 'F', ':lua require("edit.find").nF()<cr>')
 map('n', 'fw', ':HopWord <cr>')
