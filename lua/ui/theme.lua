@@ -8,7 +8,6 @@ material.setup {
   italics = {
     comments = true,
     functions = true,
-    variables = true,
   },
 }
 

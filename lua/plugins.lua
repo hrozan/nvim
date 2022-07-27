@@ -40,9 +40,7 @@ return require('packer').startup(function(use)
 
   use {
     'akinsho/toggleterm.nvim',
-    config = function()
-      require('toggleterm').setup {}
-    end,
+    config = require 'ui.terminal',
   }
 
   use {
@@ -66,9 +64,7 @@ return require('packer').startup(function(use)
   use {
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-      require('trouble').setup()
-    end,
+    config = require 'ui.trouble',
   }
 
   use {

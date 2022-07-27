@@ -17,7 +17,7 @@ require('nvim-tree').setup {
     update_cwd = false,
   },
   view = {
-    width = 55,
+    width = 60,
     side = 'right',
   },
 }
