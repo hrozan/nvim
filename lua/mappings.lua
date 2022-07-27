@@ -6,7 +6,7 @@ require 'edit.find'
 
 map('n', 'gt', ':BufferLineCycleNext<cr>')
 map('n', 'gT', ':BufferLineCyclePrev<cr>')
-map('n', 'gt', ':BufferLinePick<cr>')
+map('n', 'gy', ':BufferLinePick<cr>')
 map('n', 'gx', ':BufferLinePickClose<cr>')
 
 map('n', 'f', ':lua require("edit.find").nf()<cr>')
