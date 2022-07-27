@@ -8,6 +8,9 @@ material.setup {
     popup_menu = true,
     non_current_windows = true,
   },
+  disable = {
+    background = true, 
+  },
 }
 
 vim.g.material_style = 'deep ocean'
