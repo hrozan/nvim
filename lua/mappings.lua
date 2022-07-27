@@ -15,9 +15,9 @@ map('t', '<Esc>', '<C-\\><C-n>')
 
 map('n', '<A-0>', ':setlocal spell!<cr>')
 map('n', '<A-1>', ':NvimTreeToggle<cr>')
-map('n', '<A-2>', ':TroubleToggle<cr>')
-map('n', '<A-3>', ':Telescope find_files<cr>')
-map('n', '<A-4>', ':ToggleTerm<cr>')
+map('n', '<A-2>', ':Telescope find_files<cr>')
+map('n', '<A-3>', ':ToggleTerm<cr>')
+map('n', '<A-4>', ':TroubleToggle<cr>')
 map('n', '<A-f>', ':Format<cr>')
 
 map('n', '<C-a>', ':%y+ <cr>')
