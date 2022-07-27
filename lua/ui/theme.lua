@@ -2,14 +2,8 @@ local material = require 'material'
 
 material.setup {
   lualine_style = 'stealth',
-  contrast = {
-    sidebars = true,
-    floating_windows = true,
-    popup_menu = true,
-    non_current_windows = true,
-  },
   disable = {
-    background = true, 
+    background = true,
   },
 }
 
