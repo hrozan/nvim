@@ -39,11 +39,6 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'akinsho/toggleterm.nvim',
-    config = require 'ui.terminal',
-  }
-
-  use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
       require 'ui.treesitter'
@@ -59,12 +54,6 @@ return require('packer').startup(function(use)
     config = function()
       require 'ui.statusbar'
     end,
-  }
-
-  use {
-    'folke/trouble.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = require 'ui.trouble',
   }
 
   use {
@@ -94,45 +83,6 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'neovim/nvim-lspconfig',
-    config = function()
-      require 'engine.lsp'
-    end,
-  }
-
-  use {
-    'glepnir/lspsaga.nvim',
-    branch = 'main',
-    config = function()
-      require 'ui.widgets'
-    end,
-  }
-
-  use {
-    'rafamadriz/friendly-snippets',
-    event = 'InsertEnter',
-  }
-
-  use {
-    'L3MON4D3/LuaSnip',
-    wants = 'friendly-snippets',
-    after = 'nvim-cmp',
-    config = function()
-      require('luasnip').config.set_config { history = true, updateevents = 'TextChanged,TextChangedI' }
-      require('luasnip/loaders/from_vscode').load()
-    end,
-  }
-
-  use 'hrsh7th/cmp-nvim-lsp'
-  use { 'hrsh7th/cmp-path', after = 'cmp-nvim-lsp' }
-  use {
-    'hrsh7th/nvim-cmp',
-    config = function()
-      require 'engine.completion'
-    end,
-  }
-
-  use {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
@@ -151,13 +101,6 @@ return require('packer').startup(function(use)
     'windwp/nvim-autopairs',
     config = function()
       require('nvim-autopairs').setup()
-    end,
-  }
-
-  use {
-    'mhartington/formatter.nvim',
-    config = function()
-      require 'engine.format'
     end,
   }
 
