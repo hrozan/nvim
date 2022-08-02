@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
 
   use {
-    'marko-cerovac/material.nvim',
+    'olimorris/onedarkpro.nvim',
     config = function()
       require 'ui.theme'
     end,
