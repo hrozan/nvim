@@ -8,5 +8,9 @@ require('nvim-tree').setup {
         },
       },
     },
-  }
+  },
+  view = {
+    width = 60,
+    side = 'right',
+  },
 }
