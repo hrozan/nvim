@@ -6,7 +6,7 @@ local nmap = function(key, command)
   map('n', key, command)
 end
 
-require 'edit.find'
+require 'utils.find'
 
 map('n', 'gt', ':BufferLineCycleNext<cr>')
 map('n', 'gT', ':BufferLineCyclePrev<cr>')

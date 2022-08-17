@@ -1,27 +1,12 @@
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-local packer_bootstrap = false
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  packer_bootstrap = vim.fn.system {
-    'git',
-    'clone',
-    '--depth',
-    '1',
-    'https://github.com/wbthomason/packer.nvim',
-    install_path,
-  }
-end
+vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'editorconfig/editorconfig-vim'
 
-  use {
-    'marko-cerovac/material.nvim',
-    config = function()
-      require 'ui.theme'
-    end,
-  }
+  use 'wbthomason/packer.nvim'
+
+  use 'nvim-lua/plenary.nvim'
+
+  use 'editorconfig/editorconfig-vim'
 
   use {
     'kyazdani42/nvim-web-devicons',
@@ -32,21 +17,32 @@ return require('packer').startup(function(use)
 
   use {
     'kyazdani42/nvim-tree.lua',
-    require = 'kyazdani42/nvim-web-devicons',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+    },
     config = function()
-      require 'ui.tree'
-    end,
+      require("widget.explorer")
+    end
+  }
+
+  use {
+    'marko-cerovac/material.nvim',
+    config = function()
+      require 'view.theme'
+    end
   }
 
   use {
     'akinsho/toggleterm.nvim',
-    config = require 'ui.terminal',
+    config = function()
+      require 'widget.terminal'
+    end
   }
 
   use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      require 'ui.treesitter'
+      require 'code.treesitter'
     end,
   }
 
@@ -57,14 +53,16 @@ return require('packer').startup(function(use)
       opt = true,
     },
     config = function()
-      require 'ui.statusbar'
+      require 'view.statusbar'
     end,
   }
 
   use {
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = require 'ui.trouble',
+    config = function()
+      require 'widget.errors'
+    end,
   }
 
   use {
@@ -96,7 +94,7 @@ return require('packer').startup(function(use)
   use {
     'neovim/nvim-lspconfig',
     config = function()
-      require 'engine.lsp'
+      require 'code.lsp.setup'
     end,
   }
 
@@ -104,7 +102,7 @@ return require('packer').startup(function(use)
     'glepnir/lspsaga.nvim',
     branch = 'main',
     config = function()
-      require 'ui.widgets'
+      require 'code.lsp.saga'
     end,
   }
 
@@ -128,7 +126,7 @@ return require('packer').startup(function(use)
   use {
     'hrsh7th/nvim-cmp',
     config = function()
-      require 'engine.completion'
+      require 'code.completion'
     end,
   }
 
@@ -143,7 +141,7 @@ return require('packer').startup(function(use)
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require 'ui.tabs'
+      require 'view.tabs'
     end,
   }
 
@@ -157,11 +155,7 @@ return require('packer').startup(function(use)
   use {
     'mhartington/formatter.nvim',
     config = function()
-      require 'engine.format'
+      require 'code.format'
     end,
   }
-
-  if packer_bootstrap then
-    require('packer').sync()
-  end
 end)
