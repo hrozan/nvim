@@ -165,4 +165,10 @@ return require('packer').startup(function(use)
       require('diffview').setup()
     end,
   }
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('indent_blankline').setup()
+    end,
+  }
 end)
