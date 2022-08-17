@@ -1,7 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-
   use 'wbthomason/packer.nvim'
 
   use 'nvim-lua/plenary.nvim'
@@ -21,22 +20,22 @@ return require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons',
     },
     config = function()
-      require("widget.explorer")
-    end
+      require 'widget.explorer'
+    end,
   }
 
   use {
     'marko-cerovac/material.nvim',
     config = function()
       require 'view.theme'
-    end
+    end,
   }
 
   use {
     'akinsho/toggleterm.nvim',
     config = function()
       require 'widget.terminal'
-    end
+    end,
   }
 
   use {
@@ -156,6 +155,14 @@ return require('packer').startup(function(use)
     'mhartington/formatter.nvim',
     config = function()
       require 'code.format'
+    end,
+  }
+
+  use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('diffview').setup()
     end,
   }
 end)
