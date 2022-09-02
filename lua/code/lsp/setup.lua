@@ -1,11 +1,11 @@
 local servers = {
   'sumneko_lua',
+  'tsserver',
+  'eslint',
   'yamlls',
   'jsonls',
   'bashls',
-  'tsserver',
-  'eslint',
-  'volar',
+  'dockerls',
 }
 
 local signs = {
@@ -52,3 +52,10 @@ for type, icon in pairs(signs) do
     numhl = hl,
   })
 end
+
+lsp.omnisharp.setup {
+  cmd = { 'dotnet', '/usr/lib/omnisharp-roslyn/OmniSharp.dll' },
+  capabilities = vim.lsp.protocol.make_client_capabilities(),
+  on_attach = on_attach,
+  flags = { debounce_text_changes = 150 },
+}
