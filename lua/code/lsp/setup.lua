@@ -44,8 +44,6 @@ for _, s in pairs(servers) do
   }
 end
 
-require 'code.lsp.custom.volar'
-
 for type, icon in pairs(signs) do
   local hl = 'DiagnosticSign' .. type
   vim.fn.sign_define(hl, {
