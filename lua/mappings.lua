@@ -16,8 +16,8 @@ map('n', 'gx', ':BufferLinePickClose<cr>')
 nmap('<Leader>gr', ":Gitsigns reset_hunk<cr>")
 nmap('<Leader>gb', ':Gitsigns blame_line<cr>')
 
-map('n', 'f', ':lua require("edit.find").nf()<cr>')
-map('n', 'F', ':lua require("edit.find").nF()<cr>')
+map('n', 'f', ':lua require("utils.find").nf()<cr>')
+map('n', 'F', ':lua require("utils.find").nF()<cr>')
 map('n', 'fw', ':HopWord <cr>')
 
 map('n', '<Esc>', ':noh<cr>')

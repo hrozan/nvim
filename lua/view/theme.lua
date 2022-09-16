@@ -1,15 +1,15 @@
-local material = require 'material'
-
-material.setup {
-  lualine_style = 'stealth',
-  disable = {
-    background = true,
+require('onedarkpro').setup {
+  dark_theme = 'onedark_dark',
+  styles = {
+    functions = 'bold',
+    variables = 'bold',
   },
-  italics = {
-    comments = true,
-    functions = true,
+  options = {
+    bold = true,
+    italic = true,
+    cursorline = true,
+    transparency = true,
   },
 }
 
-vim.g.material_style = 'deep ocean'
-vim.cmd 'colorscheme material'
+vim.cmd 'colorscheme onedarkpro'
