@@ -6,6 +6,7 @@ local servers = {
   'jsonls',
   'bashls',
   'dockerls',
+  'clangd',
 }
 
 local signs = {
