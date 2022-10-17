@@ -15,6 +15,14 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'akinsho/git-conflict.nvim',
+    tag = '*',
+    config = function()
+      require('git-conflict').setup()
+    end,
+  }
+
+  use {
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons',
@@ -93,7 +101,7 @@ return require('packer').startup(function(use)
   use {
     'neovim/nvim-lspconfig',
     config = function()
-      require 'code.lsp.setup'
+      require 'code.lsp.init'
     end,
   }
 
