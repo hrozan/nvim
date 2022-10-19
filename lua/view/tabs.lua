@@ -1,4 +1,4 @@
-require('bufferline').setup {
+  require('bufferline').setup {
   options = {
     offsets = {
       {
@@ -13,15 +13,15 @@ require('bufferline').setup {
     right_trunc_marker = '',
     max_name_length = 14,
     max_prefix_length = 13,
-    tab_size = 20,
+    tab_size = 26,
     show_tab_indicators = false,
     enforce_regular_tabs = true,
     view = 'multiwindow',
     show_buffer_close_icons = true,
     show_close_icon = false,
     separator_style = 'thick',
-    always_show_bufferline = false,
-    diagnostics = false,
+    always_show_bufferline = true,
+    diagnostics = true,
 
     custom_filter = function(buf_number)
       local present_type, type = pcall(function()
