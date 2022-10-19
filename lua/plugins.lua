@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'marko-cerovac/material.nvim',
+    'olimorris/onedarkpro.nvim',
     config = function()
       require 'view.theme'
     end,
