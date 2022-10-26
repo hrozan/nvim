@@ -7,6 +7,7 @@ local servers = {
   'bashls',
   'dockerls',
   'clangd',
+  'rust_analyzer'
 }
 
 local signs = {
