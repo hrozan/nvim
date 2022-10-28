@@ -1,3 +1,4 @@
+local lsp = require 'lspconfig'
 local servers = {
   'sumneko_lua',
   'tsserver',
@@ -7,7 +8,7 @@ local servers = {
   'bashls',
   'dockerls',
   'clangd',
-  'rust_analyzer'
+  'rust_analyzer',
 }
 
 vim.diagnostic.config { virtual_text = false }
