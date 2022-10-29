@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'olimorris/onedarkpro.nvim',
+    'marko-cerovac/material.nvim',
     config = function()
       require 'view.theme'
     end,
@@ -173,10 +173,18 @@ return require('packer').startup(function(use)
       require('diffview').setup()
     end,
   }
+
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
       require('indent_blankline').setup()
     end,
   }
+  use {
+    'stevearc/aerial.nvim',
+    config = function()
+      require 'widget.info'
+    end,
+  }
+  use { 'glepnir/dashboard-nvim' }
 end)

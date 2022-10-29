@@ -28,6 +28,7 @@ map('n', '<A-1>', ':NvimTreeToggle<cr>')
 map('n', '<A-2>', ':Telescope find_files<cr>')
 map('n', '<A-3>', ':TroubleToggle<cr>')
 map('n', '<A-4>', ':ToggleTerm<cr>')
+map('n', '<A-7>', ':AerialToggle!<cr>')
 map('n', '<A-f>', ':Format<cr>')
 
 map('n', '<C-h>', '<C-w>h')

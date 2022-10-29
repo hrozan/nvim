@@ -1,4 +1,4 @@
-vim.o.guifont = 'JetBrainsMonoMedium Nerd Font:h12'
+vim.o.guifont = 'CaskaydiaCove Nerd Font:h13'
 vim.o.number = true
 vim.o.numberwidth = 2
 vim.o.relativenumber = true
@@ -18,7 +18,6 @@ vim.o.ruler = false
 vim.o.signcolumn = 'yes'
 vim.o.splitbelow = true
 vim.o.splitright = true
-vim.o.tabstop = 8
 
 vim.opt.shortmess:append 'sI'
 vim.opt.whichwrap:append '<>[]hl'

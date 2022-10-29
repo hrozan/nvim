@@ -9,6 +9,8 @@ local servers = {
   'dockerls',
   'clangd',
   'rust_analyzer',
+  'taplo',
+  'emmet_ls',
 }
 
 vim.diagnostic.config { virtual_text = false }
