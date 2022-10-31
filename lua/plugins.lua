@@ -109,7 +109,7 @@ return require('packer').startup(function(use)
     'glepnir/lspsaga.nvim',
     branch = 'main',
     config = function()
-      require 'code.lsp.saga'
+      require 'code.saga'
     end,
   }
 
