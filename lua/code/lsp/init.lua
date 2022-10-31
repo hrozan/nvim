@@ -10,6 +10,8 @@ local servers = {
   'rust_analyzer',
   'taplo',
   'emmet_ls',
+  'volar',
+  'pyright',
 }
 
 local signs = {
