@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons',
     },
     config = function()
-      require 'widget.explorer'
+      require 'editor.explorer'
     end,
   }
 
@@ -40,16 +40,9 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'akinsho/toggleterm.nvim',
-    config = function()
-      require 'widget.terminal'
-    end,
-  }
-
-  use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      require 'code.treesitter'
+      require 'ide.treesitter'
     end,
   }
 
@@ -68,7 +61,7 @@ return require('packer').startup(function(use)
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require 'widget.errors'
+      require 'ide.errors'
     end,
   }
 
@@ -101,7 +94,7 @@ return require('packer').startup(function(use)
   use {
     'neovim/nvim-lspconfig',
     config = function()
-      require 'code.lspconfig'
+      require 'ide.lspconfig'
     end,
   }
 
@@ -109,7 +102,7 @@ return require('packer').startup(function(use)
     'glepnir/lspsaga.nvim',
     branch = 'main',
     config = function()
-      require 'code.saga'
+      require 'ide.saga'
     end,
   }
 
@@ -133,7 +126,7 @@ return require('packer').startup(function(use)
   use {
     'hrsh7th/nvim-cmp',
     config = function()
-      require 'code.completion'
+      require 'ide.completion'
     end,
   }
 
@@ -162,7 +155,7 @@ return require('packer').startup(function(use)
   use {
     'mhartington/formatter.nvim',
     config = function()
-      require 'code.format'
+      require 'ide.format'
     end,
   }
 
@@ -180,11 +173,4 @@ return require('packer').startup(function(use)
       require('indent_blankline').setup()
     end,
   }
-  use {
-    'stevearc/aerial.nvim',
-    config = function()
-      require 'widget.info'
-    end,
-  }
-  use { 'glepnir/dashboard-nvim' }
 end)

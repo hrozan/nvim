@@ -6,7 +6,9 @@ local nmap = function(key, command)
   map('n', key, command)
 end
 
-require 'utils.find'
+require 'editor.find'
+map('n', 'f', ':lua require("editor.find").nf()<cr>')
+map('n', 'F', ':lua require("editor.find").nF()<cr>')
 
 map('n', 'gt', ':BufferLineCycleNext<cr>')
 map('n', 'gT', ':BufferLineCyclePrev<cr>')
@@ -16,8 +18,6 @@ map('n', 'gx', ':BufferLinePickClose<cr>')
 nmap('<Leader>gr', ":Gitsigns reset_hunk<cr>")
 nmap('<Leader>gb', ':Gitsigns blame_line<cr>')
 
-map('n', 'f', ':lua require("utils.find").nf()<cr>')
-map('n', 'F', ':lua require("utils.find").nF()<cr>')
 map('n', 'fw', ':HopWord <cr>')
 
 map('n', '<Esc>', ':noh<cr>')
@@ -26,8 +26,6 @@ map('t', '<Esc>', '<C-\\><C-n>')
 map('n', '<A-0>', ':setlocal spell!<cr>')
 map('n', '<A-1>', ':NvimTreeToggle<cr>')
 map('n', '<A-2>', ':TroubleToggle<cr>')
-map('n', '<A-3>', ':AerialToggle!<cr>')
-map('n', '<A-t>', ':ToggleTerm<cr>')
 map('n', '<A-f>', ':Format<cr>')
 
 map('n', '<C-n>', ':Telescope find_files<cr>')
