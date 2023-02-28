@@ -6,7 +6,7 @@ opt.clipboard = 'unnamedplus'
 -- Highlights the current line in the editor
 opt.cursorline = true
 
--- Modifies the auto-complete menu to behave more like an IDE
+-- Modifies the autocomplete menu to behave more like an IDE
 opt.completeopt = 'noinsert,menuone,noselect'
 
 -- Hide unused buffers
@@ -27,7 +27,7 @@ opt.numberwidth = 2
 -- Number of spaces to use for each step of (auto)indent
 opt.shiftwidth = 2
 
--- Do smart autoindenting when starting a new line.
+-- Do smart auto indenting when starting a new line.
 opt.smartindent = true
 
 -- When on, Vim automatically saves undo history to an undo file when writing a buffer to a file,
@@ -38,16 +38,14 @@ opt.undofile = true
 opt.spell = true
 opt.spelllang = 'pt_br,en'
 
-vim.o.cmdheight = 1
-vim.o.shiftwidth = 4
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.ruler = false
-vim.o.signcolumn = 'yes'
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.g.mapleader = " " 
+-- Ignore case in search patterns
+opt.ignorecase = true
 
+-- Override the ignorecase option if the search pattern contains upper case characters.
+opt.smartcase = true
+
+-- When on, splitting a window will put the new window below the current one
+vim.o.splitbelow = true
 
 -- Set font for Neovide
 vim.o.guifont = 'CaskaydiaCove Nerd Font:h13'
