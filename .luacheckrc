@@ -1,9 +1,9 @@
 read_globals = {
-  "vim",
+  'vim',
 }
 
 globals = {
-  "vim.g",
-  "vim.o",
-  "vim.opt"
+  'vim.g',
+  'vim.o',
+  'vim.opt',
 }

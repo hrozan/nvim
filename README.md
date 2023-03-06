@@ -1,4 +1,4 @@
-# Neovim Files
+# 💤 LazyVim
 
-This repo contains lua files that configure and add plugins to Neovim editor
-
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
