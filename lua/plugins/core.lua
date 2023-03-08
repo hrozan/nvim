@@ -1,5 +1,4 @@
 return {
-  { import = 'lazyvim.plugins.extras.lang.typescript' },
   {
     'nvim-treesitter/nvim-treesitter',
     opts = function(_, opts)
@@ -14,7 +13,6 @@ return {
   {
     'akinsho/toggleterm.nvim',
     version = '*',
-    opts = {--[[ things you want to change go here]]
-    },
+    config = true,
   },
 }
