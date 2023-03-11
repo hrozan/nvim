@@ -7,6 +7,7 @@ return {
         'tsx',
         'typescript',
         'c_sharp',
+        'rust',
       })
     end,
   },
@@ -15,4 +16,6 @@ return {
     version = '*',
     config = true,
   },
+  { import = 'lazyvim.plugins.extras.linting.eslint' },
+  { import = 'lazyvim.plugins.extras.formatting.prettier' },
 }
