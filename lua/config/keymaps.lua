@@ -26,3 +26,7 @@ end, { desc = 'Step Out' })
 vim.keymap.set('n', '<F2>', function()
   require('dapui').toggle()
 end, { desc = 'Toggle Debugger UI' })
+
+vim.keymap.set('n', '<leader>cs', function()
+  require('rust-tools').hover_actions.hover_actions()
+end, { desc = 'Rust Tools Code Action' })
