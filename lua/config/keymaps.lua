@@ -2,7 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 vim.keymap.set('n', '<leader>t', '<cmd>ToggleTerm<cr>')
-vim.keymap.set('n', '<A-2>', '<cmd>RustDebuggables<cr>')
+vim.keymap.set('n', '<F4>', '<cmd>RustDebuggables<cr>', { desc = 'RustDebuggables' })
 
 vim.keymap.set('n', '<F5>', function()
   require('dap').toggle_breakpoint()
