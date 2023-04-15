@@ -3,6 +3,9 @@
 -- Add any additional keymaps here
 vim.keymap.set('n', '<leader>t', '<cmd>ToggleTerm<cr>')
 vim.keymap.set('n', '<F4>', '<cmd>RustDebuggables<cr>', { desc = 'RustDebuggables' })
+vim.keymap.set('n', '<C-z>', '<cmd>undo<cr>', { desc = 'Undo' })
+vim.keymap.set('n', '<C-S-z>', '<cmd>redo<cr>', { desc = 'Redo' })
+vim.keymap.set('n', '<A-f>', '<cmd>FormatWrite<cr>', { desc = 'Formater' })
 
 vim.keymap.set('n', '<F5>', function()
   require('dap').toggle_breakpoint()

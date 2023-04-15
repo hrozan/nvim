@@ -1,5 +1,5 @@
 return {
-  { 'catppuccin/nvim', name = 'catppuccin', opts = { flavour = 'macchiato' } },
+  { 'catppuccin/nvim', name = 'catppuccin' },
   {
     'LazyVim/LazyVim',
     opts = {
