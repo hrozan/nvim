@@ -1,5 +1,10 @@
 return {
   { 'mxsdev/nvim-dap-vscode-js' },
+  {
+    'microsoft/vscode-js-debug',
+    lazy = true,
+    build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+  },
   { 'theHamsta/nvim-dap-virtual-text', config = true },
   {
     'mfussenegger/nvim-dap',
@@ -33,9 +38,8 @@ return {
 
       -- Javascript / Typescript
       require('dap-vscode-js').setup {
-        debugger_path = vim.fn.stdpath 'data' .. '/mason/packages/js-debug-adapter',
-        debugger_cmd = { 'js-debug-adapter' },
-        adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
+        debugger_path = vim.fn.stdpath 'data' .. '/lazy/vscode-js-debug',
+        adapters = { 'pwa-node' },
       }
 
       for _, language in ipairs { 'typescript', 'javascript' } do
@@ -51,6 +55,24 @@ return {
             skipFiles = { '<node_internals>/**' },
             protocol = 'inspector',
             console = 'integratedTerminal',
+            runtimeArgs = { '-r', 'ts-node/register' },
+          },
+          {
+            type = 'pwa-node',
+            request = 'launch',
+            name = 'Debug Jest Tests',
+            -- trace = true, -- include debugger info
+            runtimeExecutable = 'node',
+            runtimeArgs = {
+              '-r',
+              'ts-node/register',
+              './node_modules/jest/bin/jest.js',
+              '--runInBand',
+            },
+            rootPath = '${workspaceFolder}',
+            cwd = '${workspaceFolder}',
+            console = 'integratedTerminal',
+            internalConsoleOptions = 'neverOpen',
           },
         }
       end
