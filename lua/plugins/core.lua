@@ -18,9 +18,6 @@ return {
   },
   {
     'nvim-neo-tree/neo-tree.nvim',
-    keys = {
-      { '<A-1>', '<cmd>Neotree toggle<cr>', desc = 'Neotree Toggle' },
-    },
     opts = {
       close_if_last_window = true,
       window = {
