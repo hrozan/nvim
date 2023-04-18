@@ -10,8 +10,8 @@ return {
     'mfussenegger/nvim-dap',
     config = function()
       local dap = require 'dap'
-      vim.fn.sign_define('DapBreakpoint', { text = '🔘', texthl = '', linehl = '', numhl = '' })
-      vim.fn.sign_define('DapStopped', { text = '⚪', texthl = '', linehl = '', numhl = '' })
+      vim.fn.sign_define('DapBreakpoint', { text = '🔴', texthl = '', linehl = '', numhl = '' })
+      vim.fn.sign_define('DapStopped', { text = '🔵', texthl = '', linehl = '', numhl = '' })
 
       -- C/C++
       dap.adapters.codelldb = {
