@@ -11,8 +11,20 @@ map.set('n', '<A-2>', '<cmd>ToggleTerm<cr>', { desc = 'ToggleTerm' })
 map.set('n', '<A-3>', '<cmd>TroubleToggle<cr>', { desc = 'TroubleToggle' })
 map.set('n', '<A-4>', function() require('dapui').toggle() end, { desc = 'Toggle Debugger UI' })
 
-map.set('n', '<F3>', '<cmd>DapContinue<cr>', { desc = 'Dap Continue' })
-map.set('n', '<F4>', '<cmd>RustDebuggables<cr>', { desc = 'RustDebuggables' })
+map.set('n', '<A-t>', function() require('neotest').run.run() end, { desc = 'Neotest run' })
+map.set('n', '<A-S-t>', function() require('neotest').run.run { strategy = 'dap' } end, { desc = 'Neotest run' })
+
+map.set('n', '<C-b>', '<cmd>CMakeRun<cr>', { desc = 'CMakeRun' })
+map.set(
+  'n',
+  '<C-n>',
+  function() require('notify').dismiss { silent = true, pending = true } end,
+  { desc = 'Delete all Notifications' }
+)
+
+map.set('n', '<F2>', '<cmd>CMakeDebug<cr>', { desc = 'CMakeDebug' })
+map.set('n', '<F3>', '<cmd>RustDebuggables<cr>', { desc = 'RustDebuggables' })
+map.set('n', '<F4>', '<cmd>DapContinue<cr>', { desc = 'Dap Continue' })
 map.set('n', '<F5>', function() require('dap').toggle_breakpoint() end, { desc = 'Toggle Breakpoint' })
 map.set('n', '<F9>', function() require('dap').continue() end, { desc = 'Continue' })
 map.set('n', '<F8>', function() require('dap').step_over() end, { desc = 'Step Over' })
