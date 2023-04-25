@@ -21,6 +21,7 @@ return {
         'shfmt',
         'stylua',
         'typescript-language-server',
+        'pyright',
       },
     },
   },

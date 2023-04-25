@@ -14,6 +14,7 @@ map.set('n', '<A-4>', function() require('dapui').toggle() end, { desc = 'Toggle
 map.set('n', '<A-t>', function() require('neotest').run.run() end, { desc = 'Neotest run' })
 map.set('n', '<A-S-t>', function() require('neotest').run.run { strategy = 'dap' } end, { desc = 'Neotest run' })
 
+map.set('n', '<A-f>', '<cmd>FormatWrite<cr>', { desc = 'Formatter' })
 map.set('n', '<C-b>', '<cmd>CMakeRun<cr>', { desc = 'CMakeRun' })
 map.set(
   'n',

@@ -7,6 +7,10 @@ return {
   },
   { 'theHamsta/nvim-dap-virtual-text', config = true },
   {
+    'mfussenegger/nvim-dap-python',
+    config = function() require('dap-python').setup '~/.virtualenvs/debugpy/bin/python' end,
+  },
+  {
     'mfussenegger/nvim-dap',
     config = function()
       local dap = require 'dap'
