@@ -9,6 +9,8 @@ return {
         'codelldb',
         'cpplint',
         'css-lsp',
+        'csharp-language-server',
+        'netcoredbg',
         'emmet-ls',
         'eslint-lsp',
         'flake8',

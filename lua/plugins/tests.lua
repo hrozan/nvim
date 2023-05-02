@@ -3,6 +3,7 @@ return {
   { 'nvim-neotest/neotest-jest' },
   { 'rouge8/neotest-rust' },
   { 'nvim-neotest/neotest-python' },
+  { 'Issafalcon/neotest-dotnet' },
   {
     'nvim-neotest/neotest',
     config = function()
@@ -10,6 +11,7 @@ return {
         adapters = {
           require 'neotest-jest' {},
           require 'neotest-python' {},
+          require 'neotest-dotnet' {},
           require 'neotest-rust',
         },
       }
