@@ -1,4 +1,6 @@
 return {
+  { 'norcalli/nvim-colorizer.lua', config = true },
+  { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
   {
     'akinsho/toggleterm.nvim',
     version = '*',
