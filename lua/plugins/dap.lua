@@ -1,10 +1,4 @@
 return {
-  { 'mxsdev/nvim-dap-vscode-js' },
-  {
-    'microsoft/vscode-js-debug',
-    lazy = true,
-    build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
-  },
   { 'theHamsta/nvim-dap-virtual-text', config = true },
   {
     'mfussenegger/nvim-dap-python',
@@ -40,47 +34,6 @@ return {
       }
       dap.configurations.cpp = dap.configurations.c
 
-      -- Javascript / Typescript
-      require('dap-vscode-js').setup {
-        debugger_path = vim.fn.stdpath 'data' .. '/lazy/vscode-js-debug',
-        adapters = { 'pwa-node' },
-      }
-
-      for _, language in ipairs { 'typescript', 'javascript' } do
-        dap.configurations[language] = {
-          {
-            name = 'Launch',
-            type = 'pwa-node',
-            request = 'launch',
-            program = '${file}',
-            rootPath = '${workspaceFolder}',
-            cwd = '${workspaceFolder}',
-            sourceMaps = true,
-            skipFiles = { '<node_internals>/**' },
-            protocol = 'inspector',
-            console = 'integratedTerminal',
-            runtimeArgs = { '-r', 'ts-node/register' },
-          },
-          {
-            type = 'pwa-node',
-            request = 'launch',
-            name = 'Debug Jest Tests',
-            -- trace = true, -- include debugger info
-            runtimeExecutable = 'node',
-            runtimeArgs = {
-              '-r',
-              'ts-node/register',
-              './node_modules/jest/bin/jest.js',
-              '--runInBand',
-            },
-            rootPath = '${workspaceFolder}',
-            cwd = '${workspaceFolder}',
-            console = 'integratedTerminal',
-            internalConsoleOptions = 'neverOpen',
-          },
-        }
-      end
-
       -- Dotnet
       vim.g.dotnet_build_project = function()
         local default_path = vim.fn.getcwd() .. '/'
@@ -107,8 +60,8 @@ return {
           vim.g['dotnet_last_dll_path'] = request()
         else
           if
-            vim.fn.confirm('Do you want to change the path to dll?\n' .. vim.g['dotnet_last_dll_path'], '&yes\n&no', 2)
-            == 1
+              vim.fn.confirm('Do you want to change the path to dll?\n' .. vim.g['dotnet_last_dll_path'], '&yes\n&no', 2)
+              == 1
           then
             vim.g['dotnet_last_dll_path'] = request()
           end
