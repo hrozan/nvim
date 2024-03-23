@@ -1,12 +1,10 @@
 return {
-  {
-    'olimorris/onedarkpro.nvim',
-    priority = 1000, -- Ensure it loads first
-  },
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
   {
     'LazyVim/LazyVim',
     opts = {
-      colorscheme = 'onedark_dark',
+      colorscheme = 'catppuccin-mocha',
     },
   },
+  { 'rcarriga/nvim-notify', disable = true },
 }
